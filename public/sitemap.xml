@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:33159/sentry/posts/day1/</loc>
+  </url><url>
+    <loc>http://localhost:33159/sentry/categories/</loc>
+  </url><url>
+    <loc>http://localhost:33159/sentry/posts/</loc>
+  </url><url>
+    <loc>http://localhost:33159/sentry/</loc>
+  </url><url>
+    <loc>http://localhost:33159/sentry/tags/</loc>
+  </url>
+</urlset>

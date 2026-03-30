@@ -1,0 +1,30 @@
+baseURL = 'https://prigma.github.io/sentry'
+languageCode = 'en-us'
+title = 'Project Sentry | Threat Intel'
+theme = 'terminal'
+
+[params]
+  # Theme accent colors: orange, blue, red, green, pink
+  themeColor = 'green'
+  
+  # The text that appears in the browser tab and hero section
+  TerminalTitle = 'prigma@sentry:~$'
+  TerminalDescription = 'Decentralized Threat Intelligence & Layer 8 Exploitation Research'
+  
+  # Brand Logo Configuration
+  [params.logo]
+    logoText = 'SENTRY_PROTOCOL'
+    logoHomeLink = '/'
+    
+[menu]
+  # Building the top navigation bar
+  [[menu.main]]
+    identifier = "intel"
+    name = "Threat Intel"
+    url = "/posts"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "About Sentry"
+    url = "/about"
+    weight = 20
