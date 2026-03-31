@@ -2,16 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Project Sentry | Threat Intel</title>
-    <link>http://localhost:33159/sentry/posts/</link>
+    <link>http://localhost:1313/sentry/posts/</link>
     <description>Recent content in Posts on Project Sentry | Threat Intel</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:33159/sentry/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/sentry/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 2: Identity Arbitrage, &#39;Hidden Gem&#39; Scams, and the Psychology of FOMO</title>
+      <link>http://localhost:1313/sentry/posts/day2-intel/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day2-intel/</guid>
+      <description>The Threat Landscape: Identity Arbitrage Today&amp;rsquo;s threat intelligence originates from gray-market forums where users are coordinating the mass creation and exploitation of US-based AI training accounts (e.g., Oneforma, Outlier, Atlas Capture).&#xA;The underlying mechanism here is Identity Arbitrage. Because centralized Web2 platforms enforce strict geographical pay disparities and tax jurisdictions, opportunists utilize VPNs, residential proxies, and forged KYC (Know Your Customer) documents to spoof their geographic location and capture higher yields.</description>
+    </item>
     <item>
       <title></title>
-      <link>http://localhost:33159/sentry/posts/day1/</link>
+      <link>http://localhost:1313/sentry/posts/day1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:33159/sentry/posts/day1/</guid>
+      <guid>http://localhost:1313/sentry/posts/day1/</guid>
       <description>-&amp;ndash;&#xA;title: &amp;ldquo;Day 1: The &amp;lsquo;Long Game&amp;rsquo; Airdrop Phishing Funnel &amp;amp; Cross-Chain Data Harvesting&amp;rdquo;&#xA;date: 2026-03-30&#xA;author: &amp;ldquo;prigma&amp;rdquo;&#xA;tags: [&amp;ldquo;Phishing&amp;rdquo;, &amp;ldquo;Social Engineering&amp;rdquo;, &amp;ldquo;Threat Intel&amp;rdquo;, &amp;ldquo;OpSec&amp;rdquo;, &amp;ldquo;CyberPsychology&amp;rdquo;]&#xA;description: &amp;ldquo;Analyzing a sophisticated Web2-to-Web3 data harvesting operation disguised as a Telegram USDT airdrop, and the psychological exploits that make it effective.&amp;rdquo;&#xA;-&amp;ndash;&#xA;# The Threat Landscape: Layer 8 Exploits&#xA;In Web3 security, we often obsess over smart contract vulnerabilities—reentrancy, flash loan attacks, and oracle manipulation.</description>
     </item>
   </channel>

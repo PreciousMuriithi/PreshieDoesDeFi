@@ -2,14 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:33159/sentry/posts/day1/</loc>
+    <loc>http://localhost:1313/sentry/tags/cyberpsychology/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:33159/sentry/categories/</loc>
+    <loc>http://localhost:1313/sentry/posts/day2-intel/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:33159/sentry/posts/</loc>
+    <loc>http://localhost:1313/sentry/tags/identity-arbitrage/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:33159/sentry/</loc>
+    <loc>http://localhost:1313/sentry/tags/opsec/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:33159/sentry/tags/</loc>
+    <loc>http://localhost:1313/sentry/posts/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/sybil-attacks/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/threat-intel/</loc>
+    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/posts/day1/</loc>
+  </url><url>
+    <loc>http://localhost:1313/sentry/categories/</loc>
   </url>
 </urlset>
