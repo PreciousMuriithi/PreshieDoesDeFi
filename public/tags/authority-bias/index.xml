@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authority Bias on Project Sentry | Threat Intel</title>
+    <link>http://localhost:1313/sentry/tags/authority-bias/</link>
+    <description>Recent content in Authority Bias on Project Sentry | Threat Intel</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/sentry/tags/authority-bias/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 3: Authority Hijacks, The Advance-Fee Funnel, and False Reassurance</title>
+      <link>http://localhost:1313/sentry/posts/day3-intel/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day3-intel/</guid>
+      <description>The Threat Landscape: Layer 0 Compromise Today’s threat intelligence comes from a community forum where a &amp;ldquo;Verified Moderator&amp;rdquo; announced a massive giveaway (a Mercedes GLE Benz) with zero barrier to entry.&#xA;In the traditional Web2 space, this is a precursor to an Advance-Fee fraud or a PII (Personally Identifiable Information) harvesting operation. In the DeFi ecosystem, this exact vector mirrors a Discord Admin Compromise or a Deployer Key Hijack. Attackers take over an authoritative account (via SIM swapping, session token theft, or phishing) to broadcast a malicious payload to a trusting community.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,13 +6,41 @@
     <description>Recent content in Tags on Project Sentry | Threat Intel</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/sentry/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Admin Compromise</title>
+      <link>http://localhost:1313/sentry/tags/admin-compromise/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/admin-compromise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Authority Bias</title>
+      <link>http://localhost:1313/sentry/tags/authority-bias/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/authority-bias/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CyberPsychology</title>
       <link>http://localhost:1313/sentry/tags/cyberpsychology/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/sentry/tags/cyberpsychology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Social Engineering</title>
+      <link>http://localhost:1313/sentry/tags/social-engineering/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/social-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat Intel</title>
+      <link>http://localhost:1313/sentry/tags/threat-intel/</link>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/threat-intel/</guid>
       <description></description>
     </item>
     <item>
@@ -34,13 +62,6 @@
       <link>http://localhost:1313/sentry/tags/sybil-attacks/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/sentry/tags/sybil-attacks/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Threat Intel</title>
-      <link>http://localhost:1313/sentry/tags/threat-intel/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/threat-intel/</guid>
       <description></description>
     </item>
   </channel>
