@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/sentry/posts/day3-intel/</guid>
       <description>The Threat Landscape: Layer 0 Compromise Today’s threat intelligence comes from a community forum where a &amp;ldquo;Verified Moderator&amp;rdquo; announced a massive giveaway (a Mercedes GLE Benz) with zero barrier to entry.&#xA;In the traditional Web2 space, this is a precursor to an Advance-Fee fraud or a PII (Personally Identifiable Information) harvesting operation. In the DeFi ecosystem, this exact vector mirrors a Discord Admin Compromise or a Deployer Key Hijack. Attackers take over an authoritative account (via SIM swapping, session token theft, or phishing) to broadcast a malicious payload to a trusting community.</description>
     </item>
+    <item>
+      <title>Day 1: The &#39;Long Game&#39; Airdrop Phishing Funnel &amp; Cross-Chain Data Harvesting</title>
+      <link>http://localhost:1313/sentry/posts/day1/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day1/</guid>
+      <description>The Threat Landscape: Layer 8 Exploits In Web3 security, we often obsess over smart contract vulnerabilities—reentrancy, flash loan attacks, and oracle manipulation. However, the most devastating exploits frequently bypass the protocol layer entirely to attack Layer 8: the human user.&#xA;Today’s threat intelligence highlights a sophisticated reconnaissance and data harvesting operation currently targeting the DeFi ecosystem under the guise of an &amp;ldquo;Easter USDT Airdrop.&amp;rdquo;&#xA;The Technical Vector: The Web2-to-Web3 Bridge The operation relies on a customized Telegram bot and the normalization of airdrops to execute a multi-phase data harvesting attack.</description>
+    </item>
   </channel>
 </rss>

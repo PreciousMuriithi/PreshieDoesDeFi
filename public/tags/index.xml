@@ -6,8 +6,141 @@
     <description>Recent content in Tags on Project Sentry | Threat Intel</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/sentry/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AML/CFT</title>
+      <link>http://localhost:1313/sentry/tags/aml/cft/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/aml/cft/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CyberPsychology</title>
+      <link>http://localhost:1313/sentry/tags/cyberpsychology/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/cyberpsychology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dark Patterns</title>
+      <link>http://localhost:1313/sentry/tags/dark-patterns/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/dark-patterns/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lazarus Group</title>
+      <link>http://localhost:1313/sentry/tags/lazarus-group/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/lazarus-group/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OAuth Harvesting</title>
+      <link>http://localhost:1313/sentry/tags/oauth-harvesting/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/oauth-harvesting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>On-Chain Forensics</title>
+      <link>http://localhost:1313/sentry/tags/on-chain-forensics/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/on-chain-forensics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OTC Routing</title>
+      <link>http://localhost:1313/sentry/tags/otc-routing/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/otc-routing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Referral Farming</title>
+      <link>http://localhost:1313/sentry/tags/referral-farming/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/referral-farming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat Intel</title>
+      <link>http://localhost:1313/sentry/tags/threat-intel/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/threat-intel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IAM Hijack</title>
+      <link>http://localhost:1313/sentry/tags/iam-hijack/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/iam-hijack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KYC Spoofing</title>
+      <link>http://localhost:1313/sentry/tags/kyc-spoofing/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/kyc-spoofing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recovery Scams</title>
+      <link>http://localhost:1313/sentry/tags/recovery-scams/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/recovery-scams/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blind Signing</title>
+      <link>http://localhost:1313/sentry/tags/blind-signing/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/blind-signing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Daraja API</title>
+      <link>http://localhost:1313/sentry/tags/daraja-api/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/daraja-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Phishing</title>
+      <link>http://localhost:1313/sentry/tags/phishing/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/phishing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UI Deception</title>
+      <link>http://localhost:1313/sentry/tags/ui-deception/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/ui-deception/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MEV Traps</title>
+      <link>http://localhost:1313/sentry/tags/mev-traps/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/mev-traps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpSec</title>
+      <link>http://localhost:1313/sentry/tags/opsec/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/opsec/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Supply Chain Attacks</title>
+      <link>http://localhost:1313/sentry/tags/supply-chain-attacks/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/tags/supply-chain-attacks/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Admin Compromise</title>
       <link>http://localhost:1313/sentry/tags/admin-compromise/</link>
@@ -23,13 +156,6 @@
       <description></description>
     </item>
     <item>
-      <title>CyberPsychology</title>
-      <link>http://localhost:1313/sentry/tags/cyberpsychology/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/cyberpsychology/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Social Engineering</title>
       <link>http://localhost:1313/sentry/tags/social-engineering/</link>
       <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
@@ -37,24 +163,10 @@
       <description></description>
     </item>
     <item>
-      <title>Threat Intel</title>
-      <link>http://localhost:1313/sentry/tags/threat-intel/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/threat-intel/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Identity Arbitrage</title>
       <link>http://localhost:1313/sentry/tags/identity-arbitrage/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/sentry/tags/identity-arbitrage/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OpSec</title>
-      <link>http://localhost:1313/sentry/tags/opsec/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/opsec/</guid>
       <description></description>
     </item>
     <item>

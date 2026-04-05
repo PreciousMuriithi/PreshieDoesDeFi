@@ -1,6 +1,6 @@
 ---
 title: "Day 4: The Predator/Prey Matrix, Malicious Tooling, and the 'Fake Fullz' Economy"
-date: 2026-04-03
+date: 2026-04-02
 author: "prigma"
 tags: ["Supply Chain Attacks", "OpSec", "CyberPsychology", "MEV Traps", "Threat Intel"]
 description: "Deconstructing the underground economy of scamming scammers, and how fake Web2 'Fullz' translate to malicious Web3 smart contract templates."

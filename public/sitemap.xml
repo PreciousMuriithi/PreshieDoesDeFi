@@ -2,31 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/sentry/posts/sunday-special-laundromat/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/aml/cft/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/cyberpsychology/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/dark-patterns/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/posts/day7-intel/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/lazarus-group/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/oauth-harvesting/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/on-chain-forensics/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/otc-routing/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/posts/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/referral-farming/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/threat-intel/</loc>
+    <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/posts/day6-intel/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/iam-hijack/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/kyc-spoofing/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/recovery-scams/</loc>
+    <lastmod>2026-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/about/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/blind-signing/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/daraja-api/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/posts/day5-intel/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/phishing/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/ui-deception/</loc>
+    <lastmod>2026-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/posts/day4-intel/</loc>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/mev-traps/</loc>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/opsec/</loc>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sentry/tags/supply-chain-attacks/</loc>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/sentry/tags/admin-compromise/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sentry/tags/authority-bias/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sentry/tags/cyberpsychology/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/sentry/posts/day3-intel/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sentry/posts/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/sentry/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/sentry/tags/social-engineering/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/sentry/tags/</loc>
-    <lastmod>2026-04-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/sentry/tags/threat-intel/</loc>
     <lastmod>2026-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sentry/posts/day2-intel/</loc>
@@ -35,13 +104,11 @@
     <loc>http://localhost:1313/sentry/tags/identity-arbitrage/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/sentry/tags/opsec/</loc>
-    <lastmod>2026-03-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/sentry/tags/sybil-attacks/</loc>
     <lastmod>2026-03-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sentry/posts/day1/</loc>
+    <lastmod>2026-03-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/sentry/categories/</loc>
   </url>

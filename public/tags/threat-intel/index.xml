@@ -6,8 +6,29 @@
     <description>Recent content in Threat Intel on Project Sentry | Threat Intel</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/sentry/tags/threat-intel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 7: Referral Farming, OAuth Harvesting, and the GPT Ponzi Mechanic</title>
+      <link>http://localhost:1313/sentry/posts/day7-intel/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day7-intel/</guid>
+      <description>The Threat Landscape: The Downline Hustle Today’s intelligence drops us into the lower tiers of the gray market: the &amp;ldquo;Get-Paid-To&amp;rdquo; (GPT) ecosystem. An operator in a cybercrime forum attempts to pivot the community away from &amp;ldquo;quick easy money&amp;rdquo; toward a &amp;ldquo;slow but sure&amp;rdquo; daily grind.&#xA;However, the operator is not sharing a genuine vulnerability or arbitrage opportunity. They are executing a Referral Farming operation. The attacker wants the forum members to sign up under their affiliate link so they can passively siphon a percentage of the victims&amp;rsquo; generated revenue.</description>
+    </item>
+    <item>
+      <title>Day 6: Account Recovery Fraud, Compliance Engine Exploits, and the 180-Day IAM Hijack</title>
+      <link>http://localhost:1313/sentry/posts/day6-intel/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day6-intel/</guid>
+      <description>The Threat Landscape: The Secondary Economy of Friction Centralized financial platforms employ aggressive, automated risk-management algorithms. When an algorithm flags a transaction, it locks the account, freezing the user&amp;rsquo;s capital.&#xA;Today&amp;rsquo;s threat intelligence from gray-market forums highlights a predatory economy built around this friction: Account Recovery Fraud. Operators offer to liberate locked funds for a cut of the balance (e.g., a 40/60 split). While many are executing simple credential-harvesting operations, a subset of these actors possess actual operational &amp;ldquo;backdoors&amp;rdquo; to bypass institutional compliance engines.</description>
+    </item>
+    <item>
+      <title>Day 4: The Predator/Prey Matrix, Malicious Tooling, and the &#39;Fake Fullz&#39; Economy</title>
+      <link>http://localhost:1313/sentry/posts/day4-intel/</link>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day4-intel/</guid>
+      <description>The Threat Landscape: The Predator/Prey Matrix Today’s intelligence originates from a veteran operator inside a gray-market forum, issuing a warning to the community&amp;rsquo;s novices. The core revelation is a structural truth about illicit networks: 95% of the participants are not actual operators; they are the liquidity.&#xA;The post exposes the reality of &amp;ldquo;Carding&amp;rdquo; and US financial aid fraud (&amp;ldquo;HELB ya Yues&amp;rdquo;). Because institutional defenses like Two-Factor Authentication (2FA) and biometric verification have drastically raised the technical barrier to entry, the actual &amp;ldquo;Sharp Boys&amp;rdquo; do not sell their zero-day methods or highly guarded &amp;ldquo;Fullz&amp;rdquo; (PII data packages).</description>
+    </item>
     <item>
       <title>Day 3: Authority Hijacks, The Advance-Fee Funnel, and False Reassurance</title>
       <link>http://localhost:1313/sentry/posts/day3-intel/</link>
@@ -21,6 +42,13 @@
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/sentry/posts/day2-intel/</guid>
       <description>The Threat Landscape: Identity Arbitrage Today&amp;rsquo;s threat intelligence originates from gray-market forums where users are coordinating the mass creation and exploitation of US-based AI training accounts (e.g., Oneforma, Outlier, Atlas Capture).&#xA;The underlying mechanism here is Identity Arbitrage. Because centralized Web2 platforms enforce strict geographical pay disparities and tax jurisdictions, opportunists utilize VPNs, residential proxies, and forged KYC (Know Your Customer) documents to spoof their geographic location and capture higher yields.</description>
+    </item>
+    <item>
+      <title>Day 1: The &#39;Long Game&#39; Airdrop Phishing Funnel &amp; Cross-Chain Data Harvesting</title>
+      <link>http://localhost:1313/sentry/posts/day1/</link>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sentry/posts/day1/</guid>
+      <description>The Threat Landscape: Layer 8 Exploits In Web3 security, we often obsess over smart contract vulnerabilities—reentrancy, flash loan attacks, and oracle manipulation. However, the most devastating exploits frequently bypass the protocol layer entirely to attack Layer 8: the human user.&#xA;Today’s threat intelligence highlights a sophisticated reconnaissance and data harvesting operation currently targeting the DeFi ecosystem under the guise of an &amp;ldquo;Easter USDT Airdrop.&amp;rdquo;&#xA;The Technical Vector: The Web2-to-Web3 Bridge The operation relies on a customized Telegram bot and the normalization of airdrops to execute a multi-phase data harvesting attack.</description>
     </item>
   </channel>
 </rss>
