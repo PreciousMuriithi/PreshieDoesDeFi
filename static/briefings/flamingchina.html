@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFIR Briefing: Operation FlamingChina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom minimal styling to supplement Tailwind */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #cbd5e1; /* slate-300 */
+        }
+        
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7); /* slate-800 with opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(71, 85, 105, 0.4); /* slate-600 */
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            min-height: 300px;
+            max-height: 450px;
+        }
+
+        /* Custom Scrollbar for dark theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+        .tech-term {
+            color: #38bdf8; /* sky-400 */
+            font-weight: 600;
+            border-bottom: 1px dashed #38bdf8;
+            cursor: help;
+        }
+
+        .analogy-text {
+            color: #fbbf24; /* amber-400 */
+            font-style: italic;
+            display: none; /* Hidden by default, toggled via JS */
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #fbbf24;
+        }
+
+        .active-tab {
+            border-bottom: 2px solid #ef4444; /* red-500 */
+            color: #f8fafc; /* slate-50 */
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(51, 65, 85, 0.2) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(51, 65, 85, 0.2) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<!-- Chosen Palette: Deep Slate (Backgrounds), Sky Blue (Tech terms), Rose/Red (Threats), Amber (Analogies), Emerald (Remediation) -->
+<!-- Application Structure Plan: The SPA acts as an interactive digital briefing dossier. 
+     - Fixed header for constant context.
+     - Section 1: Intro sets the persona and stakes.
+     - Section 2: Phase 1 (Kill Chain) uses an interactive tabbed layout. This is crucial for usability; breaking down a complex, multi-stage attack into digestible chunks prevents cognitive overload for the junior researcher.
+     - Section 3: Exfiltration Visualization uses a Chart.js line graph to visually demonstrate "Low and Slow" against a massive background noise, making the concept immediately understandable.
+     - Section 4 & 5: DevSecOps Autopsy and Remediation use comparative grid layouts to juxtapose the failed state with the desired ZTA state. 
+     - Interactivity: "Translate to Analogy" toggles allow the user to read the clinical technical assessment first, then actively request the conceptual translation, enforcing active learning. -->
+<!-- Visualization & Content Choices: 
+     - Goal: Explain multi-stage attack -> Viz: Interactive Tabs -> Justification: Linear progression, avoids overwhelming text walls.
+     - Goal: Explain 10PB stealth exfiltration -> Viz: Chart.js Line Chart (Dual Axis conceptual) -> Justification: Shows the massive scale of normal ops vs the tiny, steady bleed of data. (NO SVG).
+     - Goal: Explain Network Topologies (Flat vs ZTA) -> Viz: CSS Grid block representations -> Justification: Simple visual metaphor without relying on complex external diagramming libraries (NO Mermaid). -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+<body class="cyber-grid antialiased font-sans leading-relaxed flex flex-col min-h-screen">
+
+    <!-- Sticky Header -->
+    <header class="fixed w-full z-50 glass-panel border-b border-slate-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="text-rose-500 text-2xl font-black tracking-tighter">TS//SCI</span>
+                <h1 class="text-slate-100 font-bold text-xl tracking-wider">OPERATION: FLAMINGCHINA POST-MORTEM</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-400">
+                <a href="#briefing" class="hover:text-white transition">Briefing</a>
+                <a href="#killchain" class="hover:text-white transition">Phase 1: Kill Chain</a>
+                <a href="#autopsy" class="hover:text-white transition">Phase 2: Autopsy</a>
+                <a href="#remediation" class="hover:text-white transition">Phase 3: Remediation</a>
+            </nav>
+            <button id="toggle-all-analogies" class="bg-amber-500/20 text-amber-400 border border-amber-500/50 px-3 py-1 rounded text-xs font-bold hover:bg-amber-500/40 transition">
+                &#128269; Toggle All Analogies
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <!-- Commander's Intro -->
+        <section id="briefing" class="mb-16">
+            <div class="glass-panel p-8 rounded-lg border-l-4 border-l-rose-500 shadow-2xl">
+                <h2 class="text-3xl font-bold text-white mb-4">Commander's Intent</h2>
+                <p class="text-lg text-slate-300 mb-4">
+                    Take a seat, researcher. We don't have time for theory; we operate in the aftermath of reality. 
+                    The Tianjin National Supercomputer Center just bled 10 Petabytes of proprietary modeling data. The adversaries, tracked as <span class="text-rose-400 font-bold">FlamingChina</span>, didn't use zero-day magic. They used basic structural flaws we warned the industry about a decade ago.
+                </p>
+                <p class="text-lg text-slate-300">
+                    Your objective today is to understand *how* they did it, *why* our defenses failed, and *how* we engineer an environment where this is mathematically impossible. I will give you the clinical forensics, but I know your background isn't traditional CS. So, pay attention to the translations. 
+                    <br><br><span class="text-sm text-slate-400 italic">Instruction: Click the highlighted blue technical terms to reveal the real-world conceptual analogies.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Phase 1: The Kill Chain -->
+        <section id="killchain" class="mb-16">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-white mb-2 border-b border-slate-700 pb-2">Phase 1: The Kill Chain Mapping</h2>
+                <p class="text-slate-400">Deconstructing the adversary lifecycle via MITRE ATT&CK paradigms.</p>
+            </div>
+
+            <!-- Interactive Tabs -->
+            <div class="flex flex-wrap border-b border-slate-700 mb-6">
+                <button class="tab-btn active-tab flex-1 py-3 px-4 text-center font-semibold text-sm transition" data-target="kc-initial">1. Initial Access</button>
+                <button class="tab-btn flex-1 py-3 px-4 text-center font-semibold text-sm text-slate-400 hover:text-slate-200 transition" data-target="kc-execution">2. Execution & Persistence</button>
+                <button class="tab-btn flex-1 py-3 px-4 text-center font-semibold text-sm text-slate-400 hover:text-slate-200 transition" data-target="kc-lateral">3. Lateral Movement</button>
+                <button class="tab-btn flex-1 py-3 px-4 text-center font-semibold text-sm text-slate-400 hover:text-slate-200 transition" data-target="kc-exfil">4. Exfiltration</button>
+            </div>
+
+            <!-- Tab Content Containers -->
+            <div class="glass-panel p-6 rounded-b-lg rounded-tr-lg min-h-[300px]">
+                
+                <!-- Initial Access -->
+                <div id="kc-initial" class="tab-content block">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500 text-2xl">&#128275;</div>
+                        <h3 class="text-2xl font-bold text-white">Compromised VPN Entry</h3>
+                    </div>
+                    <p class="text-slate-300 mb-4">
+                        The perimeter breach wasn't a sophisticated exploit against the firewall. The adversary achieved <span class="tech-term" onclick="toggleAnalogy(this)">Initial Access via Valid Accounts</span>. Specifically, they utilized a contractor's legacy VPN profile that lacked Multi-Factor Authentication (MFA). We assess this credential was likely acquired via <span class="tech-term" onclick="toggleAnalogy(this)">Credential Stuffing</span> or targeted spear-phishing months prior.
+                    </p>
+                    <div class="analogy-text">
+                        <strong>Commander's Translation:</strong> We spent millions building a 50-foot titanium vault door (the firewall). But we left a spare key under the doormat for the night janitor (the contractor VPN). The attackers didn't break the door down; they just found the key, unlocked it, and walked right in. Credential stuffing is just them trying millions of stolen keys until one turns the lock.
+                    </div>
+                </div>
+
+                <!-- Execution -->
+                <div id="kc-execution" class="tab-content hidden">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500 text-2xl">&#9881;</div>
+                        <h3 class="text-2xl font-bold text-white">Exploiting Legacy Debt</h3>
+                    </div>
+                    <p class="text-slate-300 mb-4">
+                        Once inside the DMZ, they needed a foothold. They scanned the environment and found "Legacy Debt"—a cluster of unpatched Windows 7 diagnostic nodes. They executed <span class="tech-term" onclick="toggleAnalogy(this)">Remote Code Execution (RCE) via EternalBlue</span> (SMBv1 vulnerability) to drop their primary payload and establish <span class="tech-term" onclick="toggleAnalogy(this)">Persistence</span> via scheduled tasks.
+                    </p>
+                    <div class="analogy-text">
+                        <strong>Commander's Translation:</strong> Once inside the lobby, they looked for the weakest point. They found an old, rusted-out ventilation shaft (Windows 7/EternalBlue) that maintenance forgot to seal years ago. They crawled through it, set up a sleeping bag in the ceiling tiles (Persistence), and now they live in the building without having to use the front door again.
+                    </div>
+                </div>
+
+                <!-- Lateral Movement -->
+                <div id="kc-lateral" class="tab-content hidden">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500 text-2xl">&#128296;</div>
+                        <h3 class="text-2xl font-bold text-white">The Flat Network Vulnerability</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                        <div>
+                            <p class="text-slate-300 mb-4">
+                                This is where the architecture failed completely. The internal network was "flat." There was no internal <span class="tech-term" onclick="toggleAnalogy(this)">Network Segmentation</span>. From the compromised diagnostic node, they had unimpeded routing to the core high-performance computing (HPC) storage clusters. They utilized <span class="tech-term" onclick="toggleAnalogy(this)">Pass-the-Hash</span> techniques to escalate privileges across the domain.
+                            </p>
+                            <div class="analogy-text">
+                                <strong>Commander's Translation:</strong> Imagine a nuclear submarine built with no internal bulkheads or sealed doors. If the hull gets punctured in the kitchen, the water rushes unimpeded through the entire ship, flooding the engine room and the command center. One leak sinks the whole boat. Because the network was flat, compromising a low-level computer gave them a straight, unlocked hallway to the crown jewels.
+                            </div>
+                        </div>
+                        <!-- CSS representation of a flat network -->
+                        <div class="bg-slate-900 border border-slate-700 rounded p-4 flex flex-col items-center justify-center">
+                            <span class="text-xs text-slate-500 mb-2 uppercase tracking-widest">Visual: Flat Network</span>
+                            <div class="w-full h-32 border-2 border-rose-500/50 bg-rose-500/10 rounded flex relative overflow-hidden">
+                                <div class="absolute left-2 top-2 text-xl">&#128187; <span class="text-xs text-rose-400">Entry</span></div>
+                                <div class="absolute top-1/2 left-1/4 w-1/2 border-b-2 border-dashed border-rose-500 h-0"></div>
+                                <div class="absolute right-2 bottom-2 text-xl">&#128452; <span class="text-xs text-rose-400">Core Data</span></div>
+                                <div class="absolute inset-0 flex items-center justify-center text-rose-500/30 font-bold rotate-12 text-2xl">NO BARRIERS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exfiltration -->
+                <div id="kc-exfil" class="tab-content hidden">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500 text-2xl">&#128228;</div>
+                        <h3 class="text-2xl font-bold text-white">The "Low and Slow" Siphon</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        You don't move 10 Petabytes of data overnight without tripping alarms. The adversary utilized a <span class="tech-term" onclick="toggleAnalogy(this)">"Low and Slow" botnet siphon</span>, establishing <span class="tech-term" onclick="toggleAnalogy(this)">Command and Control (C2) beacons</span> with randomized jitter, tunneling the exfiltrated data out through standard HTTPS (Port 443) traffic, masking it within the ambient noise of the supercomputer's massive daily throughput.
+                    </p>
+                    <div class="analogy-text mb-6">
+                        <strong>Commander's Translation:</strong> If you try to steal a lake with a fleet of tanker trucks, people will notice. But if you tap the pipe and steal one thimbleful of water every minute, mixed in with the millions of gallons flowing through the city's main water line, the meter won't even register a blip. They hid their theft inside the normal, massive chaos of the supercomputer's daily operations.
+                    </div>
+                    
+                    <!-- Exfiltration Visualization (Chart.js) -->
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700">
+                        <h4 class="text-center text-sm font-bold text-slate-400 mb-2 uppercase tracking-wider">Traffic Analysis: Hiding in the Noise</h4>
+                        <div class="chart-container">
+                            <canvas id="exfilChart"></canvas>
+                        </div>
+                        <p class="text-xs text-slate-500 text-center mt-2">Notice how the red exfiltration line remains perfectly flat and below threshold, completely masked by the immense volatility of normal HPC operations.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Phase 2: DevSecOps Autopsy -->
+        <section id="autopsy" class="mb-16">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-white mb-2 border-b border-slate-700 pb-2">Phase 2: The DevSecOps Autopsy</h2>
+                <p class="text-slate-400">Why legacy paradigms failed and what structural shifts are required.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- The Failure -->
+                <div class="glass-panel p-6 rounded-lg border-t-4 border-rose-500">
+                    <h3 class="text-xl font-bold text-white mb-3">The Failure: Perimeter Defense</h3>
+                    <p class="text-slate-300 mb-4">
+                        The NSCC relied on a traditional <span class="tech-term" onclick="toggleAnalogy(this)">Castle-and-Moat</span> security model. Heavy investment at the edge (firewalls, IPS), but implicit trust granted to any entity inside the network.
+                    </p>
+                    <div class="analogy-text mb-4">
+                        <strong>Commander's Translation:</strong> It's like an M&M candy. A hard, crunchy shell on the outside, but completely soft and gooey on the inside. Once the attacker bypassed the shell (the VPN), they were free to move anywhere because the system assumed anyone inside was a "good guy." That trust is lethal.
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded border border-slate-700 mt-4">
+                        <h4 class="text-sm font-bold text-slate-400 mb-2">Data Loss Prevention (DLP) Failure</h4>
+                        <p class="text-sm text-slate-400">
+                            Our <span class="tech-term" onclick="toggleAnalogy(this)">Heuristics and Anomaly Detection</span> systems failed because they established their baselines *after* the initial compromise. The slow bleed became the new normal.
+                        </p>
+                        <div class="analogy-text text-sm">
+                            <strong>Commander's Translation:</strong> The guard dog is trained to bark at strangers. But if a thief moves in, feeds the dog every day, and slowly starts stealing the silverware piece by piece over months... the dog gets used to him. The thief's behavior becomes the "normal baseline."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Solution -->
+                <div class="glass-panel p-6 rounded-lg border-t-4 border-emerald-500">
+                    <h3 class="text-xl font-bold text-white mb-3">The Solution: Zero Trust Architecture (ZTA)</h3>
+                    <p class="text-slate-300 mb-4">
+                        We must transition to a framework of "Never Trust, Always Verify." ZTA relies on <span class="tech-term" onclick="toggleAnalogy(this)">Continuous Authentication</span> and stringent <span class="tech-term" onclick="toggleAnalogy(this)">Micro-segmentation</span> down to the workload level.
+                    </p>
+                    <div class="analogy-text mb-4">
+                        <strong>Commander's Translation:</strong> Throw away the M&M. Think of a high-security prison. You don't just get past the front gate and have free roam. You need a retinal scan and a keycard for *every single hallway*, *every single door*, and *every single filing cabinet*. And the system re-checks your ID every 5 minutes while you're standing in the room. If a guard goes rogue, he's trapped in that one specific room.
+                    </div>
+                    
+                    <!-- CSS representation of Micro-segmentation -->
+                    <div class="bg-slate-900 border border-emerald-500/30 rounded p-4 flex flex-col items-center justify-center mt-4">
+                        <span class="text-xs text-emerald-500 mb-2 uppercase tracking-widest">Visual: Micro-segmentation</span>
+                        <div class="w-full h-32 grid grid-cols-4 grid-rows-2 gap-2">
+                            <!-- Boxes acting as isolated segments -->
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128187; Node</div>
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128187; Node</div>
+                            <div class="border-2 border-rose-500 bg-rose-500/20 rounded flex items-center justify-center text-xs text-rose-400 relative">
+                                &#128128; Breached
+                                <div class="absolute inset-0 border-4 border-rose-500 rounded animate-pulse"></div>
+                            </div>
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128187; Node</div>
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128452; DB 1</div>
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128452; DB 2</div>
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128452; DB 3</div>
+                            <div class="border-2 border-emerald-500/50 bg-emerald-500/10 rounded flex items-center justify-center text-xs text-emerald-400">&#128452; DB 4</div>
+                        </div>
+                        <span class="text-xs text-slate-400 mt-2">Breach is contained to a single workload. Lateral movement blocked.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Phase 3: Psychology & Remediation -->
+        <section id="remediation">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-white mb-2 border-b border-slate-700 pb-2">Phase 3: Threat Actor Psychology & Remediation</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Psychology Column -->
+                <div class="md:col-span-1 glass-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <span class="text-amber-500">&#129488;</span> Adversary Profiling
+                    </h3>
+                    <p class="text-slate-300 text-sm mb-4">
+                        "FlamingChina" deviates from traditional Advanced Persistent Threats (APTs). Instead of hoarding intelligence for geopolitical leverage, they immediately monetized the 10PB dataset on anonymous Telegram bazaars.
+                    </p>
+                    <div class="bg-slate-900 p-3 rounded border border-slate-700">
+                        <p class="text-sm text-slate-300">
+                            <strong>What this tells us:</strong> We are facing <span class="tech-term" onclick="toggleAnalogy(this)">Mercenary Syndicates</span>, not just state-sponsored ideologues. Their motive is profit over stealth.
+                        </p>
+                        <div class="analogy-text text-sm">
+                            <strong>Commander's Translation:</strong> They aren't James Bond trying to steal the missile codes to save the world or win a cold war. They are pirates. They don't care about planting a flag; they just want to grab the gold and fence it at the pawn shop as fast as possible before the cops show up.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remediation Column -->
+                <div class="md:col-span-2 glass-panel p-6 rounded-lg border-l-4 border-sky-500">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                        <span class="text-sky-500">&#9876;</span> The Tactical IR Rebuild
+                    </h3>
+                    <p class="text-slate-300 mb-6">If we deploy to Tianjin today, here is the operational order to stop the bleeding and rebuild.</p>
+                    
+                    <div class="space-y-4">
+                        <!-- Step 1 -->
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded bg-sky-500 text-slate-900 font-bold flex items-center justify-center shrink-0">1</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Apply the Tourniquet (Containment)</h4>
+                                <p class="text-sm text-slate-400">Sever all external outbound connections. Null-route the identified C2 IP addresses at the core router level. We stop the data exfiltration immediately, even if it means taking the supercomputer offline.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded bg-sky-500 text-slate-900 font-bold flex items-center justify-center shrink-0">2</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Sweep the Rooms (Eradication)</h4>
+                                <p class="text-sm text-slate-400">Hunt and destroy the persistence mechanisms. Rip out the legacy Windows 7 nodes completely. Re-image every affected system from known-good cryptographic hashes. Invalidate all current user tokens and force a global password/MFA reset.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex gap-4 items-start">
+                            <div class="w-8 h-8 rounded bg-sky-500 text-slate-900 font-bold flex items-center justify-center shrink-0">3</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Build the Bulkheads (ZTA Rebuild)</h4>
+                                <p class="text-sm text-slate-400">Do not plug it back in flat. Deploy software-defined networking to enforce strict micro-segmentation. Implement Identity and Access Management (IAM) policies that require cryptographically secure MFA for every lateral hop within the network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-950 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-600 text-sm">
+            <p>END OF BRIEFING. CLASSIFIED TS//SCI. UNAUTHORIZED DISTRIBUTION STRICTLY PROHIBITED.</p>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 1. Tab Navigation Logic ---
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active classes
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active-tab');
+                        b.classList.add('text-slate-400');
+                    });
+                    tabContents.forEach(c => c.classList.add('hidden'));
+
+                    // Add active class to clicked
+                    btn.classList.add('active-tab');
+                    btn.classList.remove('text-slate-400');
+                    
+                    // Show corresponding content
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+
+            // --- 2. Analogy Toggle Logic ---
+            window.toggleAnalogy = function(element) {
+                // Find the next sibling that is an analogy text
+                let nextElement = element.parentNode.nextElementSibling;
+                while(nextElement && !nextElement.classList.contains('analogy-text')) {
+                    nextElement = nextElement.nextElementSibling;
+                }
+                
+                if(nextElement) {
+                    if(nextElement.style.display === 'block') {
+                        nextElement.style.display = 'none';
+                        element.style.color = '#38bdf8'; // reset color
+                    } else {
+                        nextElement.style.display = 'block';
+                        element.style.color = '#fbbf24'; // highlight as active
+                    }
+                }
+            };
+
+            // Global toggle button
+            const globalToggle = document.getElementById('toggle-all-analogies');
+            let allVisible = false;
+            globalToggle.addEventListener('click', () => {
+                const analogies = document.querySelectorAll('.analogy-text');
+                const terms = document.querySelectorAll('.tech-term');
+                allVisible = !allVisible;
+
+                analogies.forEach(a => {
+                    a.style.display = allVisible ? 'block' : 'none';
+                });
+                terms.forEach(t => {
+                    t.style.color = allVisible ? '#fbbf24' : '#38bdf8';
+                });
+            });
+
+            // --- 3. Chart.js Implementation (Exfiltration Visualization) ---
+            const ctx = document.getElementById('exfilChart').getContext('2d');
+            
+            // Generate synthetic data for the chart
+            const labels = [];
+            const normalTrafficData = [];
+            const exfilData = [];
+            
+            // Simulate 30 days of data
+            for (let i = 1; i <= 30; i++) {
+                labels.push(`Day ${i}`);
+                // Normal traffic: Massive volatility (e.g., 50TB to 150TB per day)
+                normalTrafficData.push(Math.floor(Math.random() * (150 - 50 + 1)) + 50);
+                // Exfil traffic: Low, steady trickle, hidden underneath (e.g., constant 0.3TB per day)
+                exfilData.push(0.3 + (Math.random() * 0.1)); // slight jitter
+            }
+
+            // Custom plugin to draw a background area for "Noise Threshold"
+            const noiseThresholdPlugin = {
+                id: 'noiseThreshold',
+                beforeDraw: (chart) => {
+                    const ctx = chart.canvas.getContext('2d');
+                    const yAxis = chart.scales.y;
+                    const xAxis = chart.scales.x;
+                    
+                    // Draw a subtle zone representing the "expected noise"
+                    const topY = yAxis.getPixelForValue(200); 
+                    const bottomY = yAxis.getPixelForValue(0);
+                    
+                    ctx.save();
+                    ctx.fillStyle = 'rgba(51, 65, 85, 0.1)'; // slate-700 very faint
+                    ctx.fillRect(xAxis.left, topY, xAxis.width, bottomY - topY);
+                    ctx.restore();
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Normal Supercomputer Operations (TB)',
+                            data: normalTrafficData,
+                            borderColor: 'rgba(56, 189, 248, 0.5)', // sky-400 transparent
+                            backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                            borderWidth: 1,
+                            tension: 0.4,
+                            fill: true,
+                            pointRadius: 0 // Hide points for a cleaner look
+                        },
+                        {
+                            label: 'Malicious C2 Exfiltration (TB)',
+                            data: exfilData,
+                            borderColor: '#ef4444', // rose-500
+                            backgroundColor: 'rgba(239, 68, 68, 0.8)',
+                            borderWidth: 2,
+                            tension: 0.1,
+                            fill: true,
+                            yAxisID: 'y' // Uses same axis to show scale difference
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#cbd5e1', // slate-300
+                                font: { family: "'Segoe UI', sans-serif" }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#475569',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(71, 85, 105, 0.2)' },
+                            ticks: { color: '#64748b' }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Volume (Terabytes)',
+                                color: '#94a3b8'
+                            },
+                            grid: { color: 'rgba(71, 85, 105, 0.2)' },
+                            ticks: { color: '#64748b' },
+                            suggestedMax: 200 // Keep scale high to crush the red line
+                        }
+                    }
+                },
+                plugins: [noiseThresholdPlugin]
+            });
+        });
+    </script>
+</body>
+</html>
