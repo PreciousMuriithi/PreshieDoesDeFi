@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prigma | DevSecOps Log</title>
+    <style>
+        :root {
+            --barbie-pink: #FF1493;
+            --soft-pink: #FFE4E1;
+            --hot-magenta: #FF00FF;
+            --cyber-dark: #1A0B2E;
+            --terminal-bg: #2B0F4C;
+            --neon-glow: 0 0 10px #FF1493, 0 0 20px #FF00FF;
+        }
+
+        body {
+            background-color: var(--soft-pink);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            background-image: radial-gradient(#FFB6C1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            border: 3px solid var(--barbie-pink);
+            box-shadow: 10px 10px 0px var(--barbie-pink);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--barbie-pink), var(--hot-magenta));
+            color: white;
+            padding: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 4px solid var(--cyber-dark);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 0px var(--cyber-dark);
+        }
+
+        .header p {
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: var(--barbie-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            color: var(--barbie-pink);
+            border-bottom: 2px dashed var(--barbie-pink);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .terminal {
+            background-color: var(--terminal-bg);
+            color: #FF69B4;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid var(--hot-magenta);
+            box-shadow: var(--neon-glow);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .terminal::before {
+            content: "PrigmaOS ~ Barbie Shell";
+            display: block;
+            color: white;
+            border-bottom: 1px solid var(--hot-magenta);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .code-line {
+            display: block;
+            margin: 5px 0;
+        }
+
+        .prompt {
+            color: #00FFFF;
+            margin-right: 10px;
+        }
+
+        .command {
+            color: #FFF;
+        }
+
+        .highlight {
+            background-color: #FFB6C1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            color: var(--cyber-dark);
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+        
+        li::marker {
+            color: var(--barbie-pink);
+            font-size: 1.2em;
+        }
+
+        .neon-button {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 10px auto;
+            padding: 15px 30px;
+            background: transparent;
+            color: var(--hot-magenta);
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid var(--hot-magenta);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.3), inset 0 0 10px rgba(255, 0, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .neon-button:hover {
+            background: var(--hot-magenta);
+            color: white;
+            box-shadow: 0 0 20px var(--hot-magenta), inset 0 0 15px var(--hot-magenta);
+            text-shadow: 1px 1px 2px var(--cyber-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>DevSecOps Log</h1>
+            <p>Target: SSV Network // Phase: Zero-Day Hunt</p>
+        </div>
+
+        <div class="content">
+            <span class="status-badge">Live Hunt: April 14, 2026</span>
+
+            <p><strong>Objective:</strong> Identify zero-day vulnerabilities in the V2 Mainnet Smart Contracts via Immunefi.</p>
+
+            <h2>1. Operational Baseline & Intel</h2>
+            <ul>
+                <li><strong>Rules of Engagement:</strong> Local fork testing only. Mainnet-v2.0.0 branch.</li>
+                <li><strong>Intel Gathering:</strong> Bypassed deprecated 2023 audits. Isolated the active Quantstamp audit (Feb 25, 2026).</li>
+            </ul>
+
+            <h2>2. Vector Triage & Delta Analysis</h2>
+            <p>Analyzing patched High-Severity flaws, I locked onto <span class="highlight">SSV-2</span>: an attack manipulating the live <code>cSSV</code> total supply to break oracle quorum math.</p>
+            
+            <div class="terminal">
+                <span class="code-line"><span class="prompt">prigma@parrot:~/ssv-network$</span><span class="command">git show aa2fe766... | less</span></span>
+                <span class="code-line" style="color: #ccc;">> Inspecting surgical fixes for SSV-2...</span>
+            </div>
+
+            <h2>3. EVM State Modeling</h2>
+            <p>The developers moved the supply calculation from Memory to Storage to "freeze" the state. They introduced the following variable:</p>
+            
+            <div class="terminal">
+                <span class="code-line"><span class="command">mapping(uint256 => uint256) public roundSnapshotSupply;</span></span>
+            </div>
+
+            <p><strong>Vulnerability Hypothesis:</strong> Can the initialization check <code>if (roundSnapshotSupply[roundId] == 0)</code> be bypassed, forcefully reset via round abortion, or manipulated asynchronously?</p>
+
+            <h2>4. Current Execution State</h2>
+            <p>Executing a global repository hunt to map all reads, writes, and deletions of the target state variable.</p>
+
+            <div class="terminal">
+                <span class="code-line"><span class="prompt">prigma@parrot:~/ssv-network$</span><span class="command">grep -rnw . -e 'roundSnapshotSupply'</span></span>
+                <span class="code-line" style="color: #ccc; animation: blink 1s infinite;">> Searching architecture... _</span>
+            </div>
+
+            <a href="/bug-bounty-journey" class="neon-button">🚀 Click here to see my bug bounty journey</a>
+        </div>
+    </div>
+
+</body>
+</html>
