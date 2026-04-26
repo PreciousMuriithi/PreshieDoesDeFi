@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sovereign Vacuum | ZeroTrust Economics</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome for Icons (NO SVG) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0f172a',
+                            panel: '#1e293b',
+                            neon: '#06b6d4',
+                            magenta: '#ec4899',
+                            warning: '#f43f5e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
+                        mono: ['Fira Code', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Embedded CSS for Chart Container & Specific Interactions */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Flashcard Flip Logic */
+        .flashcard-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+
+        /* Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #ec4899;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 0 10px #ec4899;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #334155;
+            border-radius: 4px;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-cyber-magenta selection:text-white">
+
+    <!-- Chosen Palette: Cyber-Institutional (Dark Slate, Cyan, Magenta) -->
+    <!-- Application Structure Plan: A dashboard-style learning experience. 
+         1. Header introduces the context (NSE broken).
+         2. Interactive "De-Jargoning" Grid (Flip cards) to lower cognitive load before entering complex topics.
+         3. The Interactive "Macro Trap" Simulator (Core component: users manipulate interest rates to see capital flow shift from Private to Government via Chart.js).
+         4. Real-life Impact Cards (Job Stagnation, Innovation).
+         5. The Takeaway (Terminal-styled actionable conclusion).
+         This structure ensures users learn the vocabulary first, experiment with the mechanics second, and understand the real-world implications last. -->
+    <!-- Visualization & Content Choices: 
+         - Glossary -> Flip Cards -> Interactive exploration of boring text -> Tailwind/Vanilla JS.
+         - Crowding Out Effect -> Dynamic Doughnut/Bar Chart -> Allows user to "play" central banker -> Chart.js (NO SVG).
+         - Impacts -> Clean Icon Cards -> Easy reading of critical text -> Tailwind + FontAwesome. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation / Header -->
+    <nav class="bg-cyber-panel border-b border-cyber-neon/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-shield-halved text-cyber-neon text-2xl"></i>
+                <span class="text-xl font-bold font-mono tracking-tight text-white">THE_SENTRY_LOGS</span>
+            </div>
+            <div class="text-sm font-mono text-gray-400">
+                <i class="fa-regular fa-calendar mr-1"></i> DAY_29 // PRIGMA
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="max-w-4xl mx-auto px-4 py-16 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyber-neon to-cyber-magenta mb-6">
+            The Sovereign Vacuum
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 font-light mb-8">
+            Why your local stock market is broken, and how government debt is suffocating private enterprise.
+        </p>
+        <p class="text-md text-gray-400 max-w-2xl mx-auto">
+            Traditional finance uses jargon as a moat. It's designed to make you feel unqualified so you hand your money over to "experts." Today, we drain the moat. We are translating the Nairobi Securities Exchange (NSE) into plain English.
+        </p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 pb-24 space-y-24">
+
+        <!-- Part 1: The Translator -->
+        <section id="translator" class="bg-cyber-panel rounded-2xl p-6 md:p-10 border border-slate-700 shadow-2xl">
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl font-bold text-white mb-3">
+                    <i class="fa-solid fa-language text-cyber-magenta mr-2"></i> Part 1: The Translator
+                </h2>
+                <p class="text-gray-400">Click the cards to strip away the Wall Street noise.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="flashcard h-48 cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner w-full h-full relative">
+                        <div class="flashcard-front absolute w-full h-full bg-slate-800 rounded-xl border border-slate-600 flex flex-col justify-center items-center p-4 hover:border-cyber-neon transition-colors">
+                            <i class="fa-solid fa-arrow-trend-up text-3xl text-gray-300 mb-3"></i>
+                            <h3 class="text-lg font-bold">Bullish & Bearish</h3>
+                            <p class="text-xs text-cyber-neon mt-2 font-mono">CLICK TO TRANSLATE</p>
+                        </div>
+                        <div class="flashcard-back absolute w-full h-full bg-cyber-neon text-cyber-dark rounded-xl flex flex-col justify-center items-center p-6 text-center">
+                            <p class="font-bold text-sm">
+                                <strong>Bullish:</strong> Optimistic. You think prices are going UP.<br><br>
+                                <strong>Bearish:</strong> Pessimistic. You think prices are going DOWN.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flashcard h-48 cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner w-full h-full relative">
+                        <div class="flashcard-front absolute w-full h-full bg-slate-800 rounded-xl border border-slate-600 flex flex-col justify-center items-center p-4 hover:border-cyber-neon transition-colors">
+                            <i class="fa-solid fa-money-bill-wave text-3xl text-gray-300 mb-3"></i>
+                            <h3 class="text-lg font-bold">Dividends</h3>
+                            <p class="text-xs text-cyber-neon mt-2 font-mono">CLICK TO TRANSLATE</p>
+                        </div>
+                        <div class="flashcard-back absolute w-full h-full bg-cyber-neon text-cyber-dark rounded-xl flex flex-col justify-center items-center p-6 text-center">
+                            <p class="font-bold text-sm">
+                                A slice of a company's massive profit deposited directly into your account as a "thank you" for owning their stock.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flashcard h-48 cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner w-full h-full relative">
+                        <div class="flashcard-front absolute w-full h-full bg-slate-800 rounded-xl border border-slate-600 flex flex-col justify-center items-center p-4 hover:border-cyber-neon transition-colors">
+                            <i class="fa-solid fa-building-columns text-3xl text-gray-300 mb-3"></i>
+                            <h3 class="text-lg font-bold">CBK & MPC</h3>
+                            <p class="text-xs text-cyber-neon mt-2 font-mono">CLICK TO TRANSLATE</p>
+                        </div>
+                        <div class="flashcard-back absolute w-full h-full bg-cyber-neon text-cyber-dark rounded-xl flex flex-col justify-center items-center p-6 text-center">
+                            <p class="font-bold text-sm">
+                                The Central Bank (The Boss). The MPC sets the baseline Interest Rate. If they raise it, borrowing money becomes expensive for everyone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="flashcard h-48 cursor-pointer perspective-1000" onclick="this.classList.toggle('flipped')">
+                    <div class="flashcard-inner w-full h-full relative">
+                        <div class="flashcard-front absolute w-full h-full bg-slate-800 rounded-xl border border-slate-600 flex flex-col justify-center items-center p-4 hover:border-cyber-neon transition-colors">
+                            <i class="fa-solid fa-file-contract text-3xl text-gray-300 mb-3"></i>
+                            <h3 class="text-lg font-bold text-center">Fixed Income <br>(T-Bills)</h3>
+                            <p class="text-xs text-cyber-neon mt-2 font-mono">CLICK TO TRANSLATE</p>
+                        </div>
+                        <div class="flashcard-back absolute w-full h-full bg-cyber-neon text-cyber-dark rounded-xl flex flex-col justify-center items-center p-6 text-center">
+                            <p class="font-bold text-sm">
+                                You loaning money to the government for a guaranteed return. 100k today = 115k next year. "Fixed" because the state guarantees it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: The Macro Trap Simulator -->
+        <section id="simulator" class="space-y-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    <i class="fa-solid fa-chart-pie text-cyber-magenta mr-2"></i> Part 2: The Macro Trap
+                </h2>
+                <p class="text-gray-300 text-lg">
+                    Local banks are making record profits, yet the stock market is struggling. Money isn't flowing into private companies. Why? <strong>The Crowding Out Effect.</strong>
+                </p>
+            </div>
+
+            <div class="bg-cyber-panel rounded-2xl p-6 md:p-10 border border-slate-700 shadow-2xl flex flex-col lg:flex-row gap-10 items-center">
+                
+                <!-- Controls -->
+                <div class="w-full lg:w-1/3 space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">The Sovereign Vacuum</h3>
+                        <p class="text-sm text-gray-400 mb-6">
+                            Think of the government as a giant, desperate vacuum cleaner. Adjust the Central Bank Interest Rate below to see how capital flows.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-600">
+                        <label for="interestRateSlider" class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-sm text-cyber-neon">CBK Interest Rate</span>
+                            <span id="rateDisplay" class="font-bold text-2xl text-white">15.0%</span>
+                        </label>
+                        <input type="range" id="interestRateSlider" min="5" max="25" step="0.5" value="15">
+                        <div class="flex justify-between text-xs text-gray-500 mt-2 font-mono">
+                            <span>5% (Dovish)</span>
+                            <span>25% (Hawkish)</span>
+                        </div>
+                    </div>
+
+                    <div id="statusAlert" class="p-4 rounded-xl border-l-4 border-cyber-warning bg-cyber-warning/10 transition-colors duration-300">
+                        <h4 class="font-bold text-cyber-warning flex items-center mb-1">
+                            <i class="fa-solid fa-triangle-exclamation mr-2"></i> System Status
+                        </h4>
+                        <p id="statusText" class="text-sm text-gray-300">
+                            CROWDING OUT: High guaranteed state yields act as a vacuum. Investors abandon private stocks for risk-free government paper.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Chart -->
+                <div class="w-full lg:w-2/3">
+                    <div class="chart-container">
+                        <canvas id="crowdingOutChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Real Life Impact -->
+        <section id="impact" class="space-y-8">
+            <h2 class="text-3xl font-bold text-center text-white">
+                <i class="fa-solid fa-earth-africa text-cyber-neon mr-2"></i> Part 3: The Real-Life Impact
+            </h2>
+            <p class="text-center text-gray-400 max-w-2xl mx-auto">
+                "I don't own stocks or bonds, so why should I care?" You care because the Crowding Out effect dictates your reality. When the government vacuums up all the money, private businesses starve.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <!-- Impact 1 -->
+                <div class="bg-gradient-to-br from-slate-800 to-cyber-panel p-8 rounded-2xl border border-slate-700 hover:border-cyber-magenta transition-colors">
+                    <div class="w-14 h-14 bg-cyber-magenta/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-user-tie text-2xl text-cyber-magenta"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Job Stagnation</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        If a company cannot attract investment because everyone is busy lending money to the government, that company cannot expand. If they cannot expand, they cannot hire you. The "lack of jobs" isn't a mystery; it is a direct mathematical result of the government hoarding capital.
+                    </p>
+                </div>
+
+                <!-- Impact 2 -->
+                <div class="bg-gradient-to-br from-slate-800 to-cyber-panel p-8 rounded-2xl border border-slate-700 hover:border-cyber-neon transition-colors">
+                    <div class="w-14 h-14 bg-cyber-neon/20 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-lightbulb text-2xl text-cyber-neon"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">The Innovation Death Spiral</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Businesses need cheap loans to innovate. But because the government has set the baseline interest rate so high, commercial banks will charge private businesses 20% to 25% for a loan. Very few legal businesses can survive those margins, leading to a stagnant, uncreative economy.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Takeaway -->
+        <section id="takeaway" class="bg-[#0a0f1d] p-8 md:p-12 rounded-2xl border border-cyber-neon/50 shadow-[0_0_30px_rgba(6,182,212,0.15)] relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-neon to-cyber-magenta"></div>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-2/3">
+                    <h2 class="text-2xl font-mono font-bold text-white mb-4">
+                        <i class="fa-solid fa-terminal text-cyber-neon mr-2"></i>THE_TAKEAWAY // Securing Your Autonomy
+                    </h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        When you understand the macroeconomics, you stop blaming yourself for a tough job market or a bleeding stock portfolio. You realize the system is structurally tilted.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        This is why technologists and DevSecOps engineers build tools like the <strong class="text-cyber-magenta">ZeroTrust Economics Engine</strong>. When the sovereign vacuum turns on, we calculate our real yields and gracefully bridge our capital to decentralized, trustless protocols where growth is driven by code and utility, not by desperate government debt.
+                    </p>
+                </div>
+                
+                <div class="md:w-1/3 w-full">
+                    <div class="bg-black p-6 rounded-lg font-mono text-sm border border-gray-800">
+                        <div class="text-gray-500 mb-2"># Execute protocol</div>
+                        <div class="text-green-400 mb-1">> Learn the language.</div>
+                        <div class="text-yellow-400 mb-1">> Identify the traps.</div>
+                        <div class="text-cyber-neon font-bold mt-4">> Engineer your escape.</div>
+                        <span class="inline-block w-2 h-4 bg-cyber-neon mt-2 animate-pulse"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="border-t border-slate-800 py-8 text-center text-gray-500 font-mono text-sm">
+        <p>Project Sentry &copy; 2026 // Built for the ZeroTrust Economy</p>
+    </footer>
+
+    <!-- Interactive Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // State Management
+            const state = {
+                interestRate: 15.0,
+                govCapital: 80, // percentage
+                privateCapital: 20 // percentage
+            };
+
+            // DOM Elements
+            const slider = document.getElementById('interestRateSlider');
+            const rateDisplay = document.getElementById('rateDisplay');
+            const statusAlert = document.getElementById('statusAlert');
+            const statusText = document.getElementById('statusText');
+
+            // Chart Initialization
+            const ctx = document.getElementById('crowdingOutChart').getContext('2d');
+            
+            // Custom plugin to draw text in center of doughnut
+            const centerTextPlugin = {
+                id: 'centerText',
+                beforeDraw: function(chart) {
+                    if (chart.config.type !== 'doughnut') return;
+                    let width = chart.width,
+                        height = chart.height,
+                        ctx = chart.ctx;
+
+                    ctx.restore();
+                    let fontSize = (height / 160).toFixed(2);
+                    ctx.font = "bold " + fontSize + "em sans-serif";
+                    ctx.textBaseline = "middle";
+                    ctx.fillStyle = "#ffffff";
+
+                    let text = state.interestRate.toFixed(1) + "%",
+                        textX = Math.round((width - ctx.measureText(text).width) / 2),
+                        textY = height / 2;
+
+                    ctx.fillText(text, textX, textY);
+
+                    // Draw subtitle
+                    ctx.font = "normal " + (fontSize * 0.4).toFixed(2) + "em monospace";
+                    ctx.fillStyle = "#94a3b8";
+                    let subText = "CBK RATE";
+                    let subTextX = Math.round((width - ctx.measureText(subText).width) / 2);
+                    ctx.fillText(subText, subTextX, textY + 30);
+                    
+                    ctx.save();
+                }
+            };
+
+            const chartConfig = {
+                type: 'doughnut',
+                data: {
+                    labels: ['Private Sector (Equities/Jobs)', 'Government Debt (T-Bills)'],
+                    datasets: [{
+                        data: [state.privateCapital, state.govCapital],
+                        backgroundColor: [
+                            '#06b6d4', // Cyber Neon for Private
+                            '#ec4899'  // Cyber Magenta for Gov
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '75%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#f8fafc',
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    size: 14
+                                },
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return ' Capital Allocation: ' + context.parsed + '%';
+                                }
+                            }
+                        }
+                    }
+                },
+                plugins: [centerTextPlugin]
+            };
+
+            const myChart = new Chart(ctx, chartConfig);
+
+            // Core Interaction Handling
+            slider.addEventListener('input', (e) => {
+                const val = parseFloat(e.target.value);
+                state.interestRate = val;
+                rateDisplay.textContent = val.toFixed(1) + '%';
+
+                // Data Processing: Calculate Crowding Out Effect
+                // At 5%, Gov = 20%, Private = 80%. At 15%, Gov = 80%, Private = 20%. At 25%, Gov = 95%, Private = 5%
+                // Linear mapping: govShare = (val - 5) * (75 / 10) + 20
+                let govShare = ((val - 5) * 7.5) + 20;
+                
+                // Clamp values to keep it realistic
+                govShare = Math.min(95, Math.max(10, govShare));
+                let privateShare = 100 - govShare;
+
+                state.govCapital = Math.round(govShare);
+                state.privateCapital = Math.round(privateShare);
+
+                // Update Chart
+                myChart.data.datasets[0].data = [state.privateCapital, state.govCapital];
+                myChart.update();
+
+                // Dynamic UI Updates based on Thresholds
+                if (val >= 12) {
+                    statusAlert.className = "p-4 rounded-xl border-l-4 border-cyber-warning bg-cyber-warning/10 transition-colors duration-300";
+                    statusAlert.querySelector('h4').className = "font-bold text-cyber-warning flex items-center mb-1";
+                    statusAlert.querySelector('i').className = "fa-solid fa-triangle-exclamation mr-2";
+                    statusText.innerHTML = "<strong>CROWDING OUT DETECTED:</strong> High guaranteed state yields act as a vacuum. Investors abandon private stocks for risk-free government paper. Private economic growth stalls.";
+                } else if (val < 12 && val > 8) {
+                    statusAlert.className = "p-4 rounded-xl border-l-4 border-yellow-500 bg-yellow-500/10 transition-colors duration-300";
+                    statusAlert.querySelector('h4').className = "font-bold text-yellow-500 flex items-center mb-1";
+                    statusAlert.querySelector('i').className = "fa-solid fa-scale-balanced mr-2";
+                    statusText.innerHTML = "<strong>MARKET BALANCING:</strong> Rates are stabilizing. Capital begins to tentatively return to private markets searching for growth.";
+                } else {
+                    statusAlert.className = "p-4 rounded-xl border-l-4 border-green-500 bg-green-500/10 transition-colors duration-300";
+                    statusAlert.querySelector('h4').className = "font-bold text-green-500 flex items-center mb-1";
+                    statusAlert.querySelector('i').className = "fa-solid fa-seedling mr-2";
+                    statusText.innerHTML = "<strong>ECONOMIC STIMULUS:</strong> Cheap money encourages risk. Investors abandon low-yield bonds and pour money into private companies, driving stock market growth and hiring.";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
