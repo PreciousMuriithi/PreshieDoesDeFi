@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentry Equities Protocol | Global Bridge</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome for Icons (NO SVG) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            dark: '#0f172a',
+                            panel: '#1e293b',
+                            neon: '#06b6d4',
+                            magenta: '#ec4899',
+                            success: '#10b981',
+                            warning: '#eab308',
+                            danger: '#ef4444'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
+                        mono: ['Fira Code', 'Courier New', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Embedded CSS for Chart Container & Layout Specifics */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+
+        /* Strict Chart Container Constraint */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: 300px;
+            max-height: 350px;
+            margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+
+        /* Terminal Styling */
+        .terminal-output {
+            max-height: 200px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        /* Number input resets */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-cyber-magenta selection:text-white min-h-screen flex flex-col">
+
+    <!-- Chosen Palette: Cyber-Institutional (Dark Slate, Neon Cyan, Cyber Magenta) -->
+    
+    <!-- Application Structure Plan: 
+         This SPA translates the Day 32 architectural report into a functional Web3 dashboard.
+         1. Header/Nav: Establishes context (Sentry Protocol, Base L2 Network, Wallet Balance).
+         2. Context Header: Translates the "Geographic Moat" thesis into a brief onboarding summary.
+         3. Main Grid (Left Column): Market Context. Displays the simulated $INTC WSB pump using Chart.js. Below the chart, a visual representation of the "ZeroTrust Pipeline" (M-Pesa -> USDC -> Oracle -> sINTC) replacing the legacy SWIFT/Brokerage bottlenecks without using SVGs.
+         4. Main Grid (Right Column): The Execution Engine. An interactive swap UI simulating the minting of over-collateralized synthetic debt (USDC to sINTC). A simulated blockchain terminal provides real-time psychological feedback for the transaction flow.
+         This structure mirrors professional DeFi interfaces (like Synthetix or Uniswap) to prove the viability of the "Global Equities Bridge". -->
+    
+    <!-- Visualization & Content Choices: 
+         - $INTC Market Data -> Dynamic Line Chart (Chart.js) -> Visualizes the $30B wealth event mentioned in the report, allowing users to see the exact liquidity they are accessing.
+         - Architectural Flow -> Flexbox/Grid with FontAwesome Icons -> Clarifies the complex M-Pesa to Smart Contract pipeline textually defined in the report. (NO SVG/Mermaid used).
+         - Execution Interface -> Interactive Vanilla JS Inputs -> Lets users "feel" the lack of friction (no SWIFT fees, no FX spread) by calculating exact fractional shares.
+         - Blockchain Terminal -> Auto-scrolling div -> Validates the DevSecOps narrative by showing simulated Oracle checks and Base L2 RPC pings. -->
+    
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation -->
+    <nav class="bg-cyber-panel border-b border-cyber-neon/30 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-cyber-neon to-cyber-magenta flex items-center justify-center shadow-[0_0_10px_rgba(6,182,212,0.5)]">
+                    <i class="fa-solid fa-bridge-water text-white text-sm"></i>
+                </div>
+                <span class="text-xl font-bold font-mono tracking-tight text-white">SENTRY_EQUITIES</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="hidden sm:flex items-center text-xs font-mono bg-cyber-success/10 text-cyber-success border border-cyber-success/30 px-3 py-1 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-cyber-success mr-2 animate-pulse"></span> Base L2 Mainnet
+                </div>
+                <div class="flex items-center space-x-2 bg-slate-800 py-1.5 px-4 rounded-full border border-slate-600 shadow-inner">
+                    <i class="fa-solid fa-wallet text-cyber-magenta"></i>
+                    <span class="font-mono text-sm font-bold text-white"><span id="userUsdcBalance">2500.00</span> USDC</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-8 w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Header / Context (Spans full width) -->
+        <div class="col-span-1 lg:col-span-3 mb-2">
+            <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyber-neon to-white mb-2">
+                The ZeroTrust Global Equities Bridge
+            </h1>
+            <p class="text-gray-400 text-sm max-w-4xl leading-relaxed">
+                Bypassing the Geographic Moat. Access the <strong class="text-white">$30 Billion Intel ($INTC) wealth-generation event</strong> directly from Kenya. By utilizing Amani P2P fiat on-ramps and Chainlink Oracles, we eliminate SWIFT bottlenecks, FX traps, and US brokerage KYC walls. Mint synthetic fractional equities with zero minimums.
+            </p>
+        </div>
+
+        <!-- LEFT COLUMN: Market Data & Architecture -->
+        <div class="lg:col-span-2 space-y-6">
+            
+            <!-- Chart Panel -->
+            <div class="glass-panel rounded-2xl p-5 shadow-2xl relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-[-50px] right-[-50px] w-32 h-32 bg-cyber-magenta/10 rounded-full blur-3xl"></div>
+                
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b border-slate-700 pb-3">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-1">
+                            <h2 class="text-2xl font-bold text-white">Synthetic Intel</h2>
+                            <span class="bg-slate-800 border border-slate-600 text-gray-300 font-mono text-xs px-2 py-1 rounded">sINTC / USDC</span>
+                        </div>
+                        <div class="flex items-baseline space-x-3">
+                            <span id="livePrice" class="text-3xl font-mono font-bold text-cyber-neon">$38.92</span>
+                            <span class="text-cyber-success font-bold text-sm bg-cyber-success/10 px-2 py-0.5 rounded">
+                                <i class="fa-solid fa-arrow-trend-up mr-1"></i> +15.4% (WSB Pump)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2 text-xs font-mono mt-4 sm:mt-0 bg-slate-800 p-1 rounded-lg border border-slate-700">
+                        <button class="hover:bg-cyber-neon hover:text-cyber-dark text-gray-400 px-3 py-1 rounded transition-colors">1D</button>
+                        <button class="bg-cyber-neon text-cyber-dark px-3 py-1 rounded shadow">1W</button>
+                        <button class="hover:bg-cyber-neon hover:text-cyber-dark text-gray-400 px-3 py-1 rounded transition-colors">1M</button>
+                    </div>
+                </div>
+                
+                <p class="text-xs text-gray-500 mb-4 font-mono"><i class="fa-solid fa-circle-info mr-1"></i> Asset algorithmically pegged to real-world NYSE: INTC price via decentralized oracles.</p>
+                
+                <!-- Chart Container (Strictly Constrained) -->
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Architecture Flow -->
+            <div class="glass-panel rounded-2xl p-6 shadow-xl border-l-4 border-cyber-magenta">
+                <h3 class="text-lg font-bold text-white mb-5 flex items-center">
+                    <i class="fa-solid fa-diagram-project text-cyber-magenta mr-3"></i> Architecture: Bypassing the Legacy Wall
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center bg-slate-800/50 p-6 rounded-xl border border-slate-700">
+                    
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-green-500 flex items-center justify-center mb-3 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
+                            <i class="fa-solid fa-mobile-screen text-green-400 text-2xl"></i>
+                        </div>
+                        <span class="text-sm font-bold text-white mb-1">M-Pesa (KES)</span>
+                        <span class="text-[10px] text-gray-400">Local Fiat</span>
+                    </div>
+
+                    <!-- Flow 1 -->
+                    <div class="flex flex-col items-center justify-center text-gray-500 hidden md:flex">
+                        <span class="text-[9px] uppercase tracking-widest text-cyber-success mb-1 font-mono">Amani P2P</span>
+                        <i class="fa-solid fa-arrow-right-long text-xl text-cyber-success animate-pulse"></i>
+                        <span class="text-[9px] text-gray-500 mt-1">zk-KYC Validated</span>
+                    </div>
+                    <div class="md:hidden flex justify-center py-2"><i class="fa-solid fa-arrow-down text-cyber-success"></i></div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-blue-500 flex items-center justify-center mb-3 shadow-[0_0_10px_rgba(59,130,246,0.3)]">
+                            <i class="fa-solid fa-coins text-blue-400 text-2xl"></i>
+                        </div>
+                        <span class="text-sm font-bold text-white mb-1">USDC Pool</span>
+                        <span class="text-[10px] text-gray-400">Self-Custodial</span>
+                    </div>
+
+                    <!-- Flow 2 -->
+                    <div class="flex flex-col items-center justify-center text-gray-500 hidden md:flex">
+                        <span class="text-[9px] uppercase tracking-widest text-cyber-neon mb-1 font-mono">Chainlink Oracle</span>
+                        <i class="fa-solid fa-arrow-right-long text-xl text-cyber-neon animate-pulse"></i>
+                        <span class="text-[9px] text-gray-500 mt-1">Price Feed Lock</span>
+                    </div>
+                    <div class="md:hidden flex justify-center py-2"><i class="fa-solid fa-arrow-down text-cyber-neon"></i></div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center text-center relative">
+                        <div class="absolute -top-2 -right-2 bg-cyber-magenta text-white text-[9px] font-bold px-2 py-0.5 rounded-full animate-bounce">MINT</div>
+                        <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-cyber-magenta flex items-center justify-center mb-3 shadow-[0_0_15px_rgba(236,72,153,0.5)]">
+                            <i class="fa-solid fa-microchip text-cyber-magenta text-2xl"></i>
+                        </div>
+                        <span class="text-sm font-bold text-white mb-1">sINTC Equity</span>
+                        <span class="text-[10px] text-gray-400">Fractional / 24-7</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Execution Engine -->
+        <div class="space-y-6">
+            
+            <!-- Swap Interface -->
+            <div class="bg-gradient-to-b from-slate-800 to-cyber-panel rounded-2xl p-1 shadow-2xl relative">
+                <!-- Glowing border effect wrapper -->
+                <div class="bg-cyber-dark rounded-xl p-6 h-full relative overflow-hidden">
+                    
+                    <div class="absolute top-0 right-0 p-3 opacity-5">
+                        <i class="fa-solid fa-bolt text-8xl text-cyber-neon"></i>
+                    </div>
+
+                    <h2 class="text-lg font-bold text-white mb-5 font-mono flex items-center border-b border-slate-800 pb-3">
+                        <i class="fa-solid fa-layer-group text-cyber-neon mr-2"></i> Synthesize Asset
+                    </h2>
+
+                    <!-- Deposit Section (USDC) -->
+                    <div class="bg-slate-900/80 rounded-xl p-4 mb-2 border border-slate-700 hover:border-cyber-neon/50 transition-colors group">
+                        <div class="flex justify-between text-xs text-gray-400 mb-2 font-mono">
+                            <span>DEPOSIT COLLATERAL</span>
+                            <span>Wallet: <span id="maxUsdc" class="cursor-pointer text-cyber-neon hover:underline font-bold transition-colors">2500.00</span></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <input type="number" id="payInput" placeholder="0.00" class="bg-transparent text-3xl font-bold text-white w-2/3 focus:outline-none placeholder-slate-600" value="500">
+                            <div class="bg-slate-800 px-3 py-1.5 rounded-lg flex items-center font-bold border border-slate-600 group-hover:border-cyber-neon/50 transition-colors">
+                                <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png?v=029" alt="USDC" class="w-5 h-5 mr-2" onerror="this.src=''; this.className='fa-solid fa-dollar-sign text-blue-400 mr-2';">
+                                USDC
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flow Direction Icon -->
+                    <div class="flex justify-center -my-3 relative z-10">
+                        <div class="bg-slate-800 border border-slate-600 w-10 h-10 rounded-full flex items-center justify-center text-gray-400 shadow-lg">
+                            <i class="fa-solid fa-arrow-down text-cyber-neon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Receive Section (sINTC) -->
+                    <div class="bg-slate-900/80 rounded-xl p-4 mt-2 border border-slate-700">
+                        <div class="flex justify-between text-xs text-gray-400 mb-2 font-mono">
+                            <span>MINT SYNTHETIC (EST.)</span>
+                            <span>Oracle: <span id="calcPrice" class="text-white">$38.92</span></span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <input type="text" id="receiveOutput" class="bg-transparent text-3xl font-bold text-cyber-magenta w-2/3 focus:outline-none" readonly>
+                            <div class="bg-slate-800 px-3 py-1.5 rounded-lg flex items-center font-bold border border-cyber-magenta/30 shadow-[0_0_10px_rgba(236,72,153,0.1)]">
+                                <i class="fa-solid fa-microchip text-cyber-magenta mr-2"></i>
+                                sINTC
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slippage & Fees -->
+                    <div class="mt-4 px-2 space-y-1">
+                        <div class="flex justify-between text-xs text-gray-500 font-mono">
+                            <span>Slippage Tolerance</span>
+                            <span class="text-white">0.5%</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-500 font-mono">
+                            <span>Legacy SWIFT / Broker Fees</span>
+                            <span class="text-cyber-danger line-through">$35.00</span>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-500 font-mono">
+                            <span>Protocol Minting Fee (Base L2)</span>
+                            <span class="text-cyber-success">~$0.04</span>
+                        </div>
+                    </div>
+
+                    <!-- Execution Button -->
+                    <button id="executeBtn" class="w-full mt-6 bg-gradient-to-r from-cyber-neon to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold font-mono py-4 rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+                        EXECUTE ZERO-TRUST MINT
+                    </button>
+                </div>
+            </div>
+
+            <!-- Terminal Output (DevSecOps View) -->
+            <div class="bg-[#020617] rounded-xl border border-slate-700 font-mono text-xs shadow-2xl relative overflow-hidden">
+                <div class="bg-slate-800 px-4 py-2 border-b border-slate-700 flex justify-between items-center">
+                    <span class="text-gray-400 flex items-center"><i class="fa-solid fa-terminal mr-2"></i> Sentry.Node // Execution Logs</span>
+                    <div class="flex space-x-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyber-danger/80"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyber-warning/80"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyber-success/80"></span>
+                    </div>
+                </div>
+                <div id="terminalBody" class="terminal-output p-4 text-gray-500 space-y-1.5">
+                    <div><span class="text-cyber-neon">></span> Initializing DevSecOps environment...</div>
+                    <div><span class="text-cyber-neon">></span> Connecting to Base L2 RPC endpoint... <span class="text-cyber-success font-bold">[OK]</span></div>
+                    <div><span class="text-cyber-neon">></span> Validating Amani P2P zk-KYC credential... <span class="text-cyber-success font-bold">[VERIFIED]</span></div>
+                    <div class="text-gray-400"><span class="text-cyber-neon">></span> System ready. Waiting for signed transaction.</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-slate-800 py-6 text-center text-gray-600 font-mono text-xs">
+        <p>Project Sentry &copy; 2026 // Decentralized Financial Sovereignty</p>
+    </footer>
+
+    <!-- Application Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // --- 1. State Management ---
+            const state = {
+                usdcBalance: 2500.00,
+                sIntcBalance: 0.00,
+                currentPrice: 38.92, // Pumped price representing the WSB event
+                isProcessing: false
+            };
+
+            // DOM Elements Mapping
+            const elements = {
+                userUsdcBalance: document.getElementById('userUsdcBalance'),
+                maxUsdc: document.getElementById('maxUsdc'),
+                payInput: document.getElementById('payInput'),
+                receiveOutput: document.getElementById('receiveOutput'),
+                executeBtn: document.getElementById('executeBtn'),
+                terminalBody: document.getElementById('terminalBody'),
+                calcPrice: document.getElementById('calcPrice')
+            };
+
+            // --- 2. Chart.js Implementation (Visualizing the WSB Pump) ---
+            const ctx = document.getElementById('priceChart').getContext('2d');
+            
+            // Generate simulated "WSB Pump" data over a 7-day period (hourly/daily intervals)
+            const labels = [];
+            const dataPoints = [];
+            let basePrice = 29.50; // Pre-pump baseline
+            
+            for(let i=1; i<=24; i++) {
+                labels.push(`T-${24-i}h`);
+                if (i > 18) {
+                    // Massive parabolic surge representing the Trump/WSB effect
+                    basePrice += (Math.random() * 2.5) + 1.0; 
+                } else if (i > 15) {
+                    // Initial build up
+                    basePrice += (Math.random() * 0.8) + 0.2;
+                } else {
+                    // Flatline / normal volatility
+                    basePrice += (Math.random() - 0.5) * 0.5;
+                }
+                dataPoints.push(basePrice.toFixed(2));
+            }
+            
+            // Ensure the final data point exactly matches our application state
+            dataPoints[dataPoints.length - 1] = state.currentPrice;
+
+            // Gradient for the chart line to look cyber-themed
+            let gradientFill = ctx.createLinearGradient(0, 0, 0, 300);
+            gradientFill.addColorStop(0, 'rgba(6, 182, 212, 0.4)'); // cyber-neon with opacity
+            gradientFill.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
+
+            const priceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'sINTC Price (USD)',
+                        data: dataPoints,
+                        borderColor: '#06b6d4',
+                        backgroundColor: gradientFill,
+                        borderWidth: 3,
+                        pointBackgroundColor: '#ec4899', // magenta points
+                        pointBorderColor: '#0f172a',
+                        pointBorderWidth: 2,
+                        pointRadius: 0, // hide points by default
+                        pointHoverRadius: 6,
+                        fill: true,
+                        tension: 0.3 // slight curve
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false, // MANDATORY for responsive chart container fitting
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                            titleColor: '#06b6d4',
+                            titleFont: { family: "'Fira Code', monospace", size: 11 },
+                            bodyColor: '#fff',
+                            bodyFont: { family: "'Inter', sans-serif", size: 16, weight: 'bold' },
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: false,
+                            callbacks: {
+                                label: function(context) {
+                                    return '$' + context.parsed.y.toFixed(2);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { 
+                                color: '#475569', 
+                                font: { family: "'Fira Code', monospace", size: 10 },
+                                maxTicksLimit: 6 
+                            }
+                        },
+                        y: {
+                            grid: { color: 'rgba(51, 65, 85, 0.3)', borderDash: [5, 5] },
+                            border: { display: false },
+                            ticks: { 
+                                color: '#475569',
+                                font: { family: "'Fira Code', monospace", size: 10 },
+                                callback: function(value) { return '$' + value; }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // --- 3. Trading Engine Logic ---
+            
+            // Calculate fractional shares based on input
+            const updateCalculation = () => {
+                const inputVal = parseFloat(elements.payInput.value);
+                if (isNaN(inputVal) || inputVal <= 0) {
+                    elements.receiveOutput.value = "0.00000";
+                    return;
+                }
+                // Math: USDC Amount / Asset Price = Fractional Synthetic Shares
+                const shares = (inputVal / state.currentPrice).toFixed(5);
+                elements.receiveOutput.value = shares;
+            };
+
+            // Terminal logger helper to simulate DevSecOps feedback
+            const logToTerminal = (message, type = 'info') => {
+                const div = document.createElement('div');
+                const timestamp = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit", fractionalSecondDigits: 2 });
+                
+                let colorClass = 'text-gray-300';
+                if (type === 'success') colorClass = 'text-cyber-success font-bold';
+                if (type === 'system') colorClass = 'text-cyber-magenta font-bold';
+                if (type === 'warn') colorClass = 'text-cyber-warning font-bold';
+                if (type === 'error') colorClass = 'text-cyber-danger font-bold';
+
+                div.innerHTML = `<span class="text-slate-600">[${timestamp}]</span> <span class="text-cyber-neon">></span> <span class="${colorClass}">${message}</span>`;
+                elements.terminalBody.appendChild(div);
+                
+                // Auto-scroll to bottom
+                elements.terminalBody.scrollTop = elements.terminalBody.scrollHeight;
+            };
+
+            // Event Listeners
+            elements.maxUsdc.addEventListener('click', () => {
+                elements.payInput.value = state.usdcBalance.toFixed(2);
+                updateCalculation();
+            });
+
+            elements.payInput.addEventListener('input', updateCalculation);
+
+            // Mock Smart Contract Execution Flow
+            elements.executeBtn.addEventListener('click', () => {
+                if(state.isProcessing) return;
+                
+                const inputVal = parseFloat(elements.payInput.value);
+                
+                // Basic Validation
+                if (isNaN(inputVal) || inputVal <= 0) {
+                    logToTerminal("ERROR: Invalid input payload.", "error");
+                    return;
+                }
+                if (inputVal > state.usdcBalance) {
+                    logToTerminal("REVERT: Insufficient USDC balance in connected wallet.", "error");
+                    return;
+                }
+
+                // Lock UI State
+                state.isProcessing = true;
+                const expectedShares = (inputVal / state.currentPrice).toFixed(5);
+                
+                elements.executeBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> AWAITING SIGNATURE...';
+                elements.executeBtn.classList.add('opacity-70', 'cursor-not-allowed', 'from-slate-600', 'to-slate-700');
+                elements.executeBtn.classList.remove('from-cyber-neon', 'to-blue-600', 'hover:from-cyan-400', 'hover:to-blue-500');
+
+                // Simulation Timers
+                logToTerminal(`Initiating smart contract interaction: Vault.mint(asset: "sINTC", amountIn: ${inputVal})`);
+                
+                setTimeout(() => {
+                    logToTerminal(`Validating Chainlink Price Feed: 0xINTC...`);
+                }, 800);
+
+                setTimeout(() => {
+                    logToTerminal(`Oracle Consensus Reached. Price locked at $${state.currentPrice}.`, "system");
+                    elements.executeBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-2"></i> BROADCASTING TO BASE L2...';
+                }, 1800);
+
+                setTimeout(() => {
+                    logToTerminal(`Transaction submitted to Mempool. Awaiting block confirmation...`);
+                }, 2800);
+
+                setTimeout(() => {
+                    // Update Internal State
+                    state.usdcBalance -= inputVal;
+                    state.sIntcBalance += parseFloat(expectedShares);
+                    
+                    // Update DOM
+                    elements.userUsdcBalance.innerText = state.usdcBalance.toFixed(2);
+                    elements.maxUsdc.innerText = state.usdcBalance.toFixed(2);
+                    elements.payInput.value = "";
+                    elements.receiveOutput.value = "0.00000";
+
+                    // Unlock UI
+                    state.isProcessing = false;
+                    elements.executeBtn.innerHTML = 'EXECUTE ZERO-TRUST MINT';
+                    elements.executeBtn.classList.remove('opacity-70', 'cursor-not-allowed', 'from-slate-600', 'to-slate-700');
+                    elements.executeBtn.classList.add('from-cyber-neon', 'to-blue-600', 'hover:from-cyan-400', 'hover:to-blue-500');
+
+                    // Final Logs
+                    const mockTxHash = "0x" + Array.from({length: 40}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+                    logToTerminal(`SUCCESS: Block confirmed. TxHash: ${mockTxHash.substring(0,8)}...${mockTxHash.substring(36)}`, "success");
+                    logToTerminal(`Minted ${expectedShares} sINTC. Liquidity secured in self-custody.`, "system");
+
+                }, 4500);
+            });
+
+            // Initialize calculation on load
+            updateCalculation();
+        });
+    </script>
+</body>
+</html>
