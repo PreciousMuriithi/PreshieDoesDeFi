@@ -1,54 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Threat Intel on Project Sentry | Threat Intel</title>
-    <link>http://localhost:1313/sentry/tags/threat-intel/</link>
-    <description>Recent content in Threat Intel on Project Sentry | Threat Intel</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/sentry/tags/threat-intel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Day 7: Referral Farming, OAuth Harvesting, and the GPT Ponzi Mechanic</title>
-      <link>http://localhost:1313/sentry/posts/day7-intel/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day7-intel/</guid>
-      <description>The Threat Landscape: The Downline Hustle Today’s intelligence drops us into the lower tiers of the gray market: the &amp;ldquo;Get-Paid-To&amp;rdquo; (GPT) ecosystem. An operator in a cybercrime forum attempts to pivot the community away from &amp;ldquo;quick easy money&amp;rdquo; toward a &amp;ldquo;slow but sure&amp;rdquo; daily grind.&#xA;However, the operator is not sharing a genuine vulnerability or arbitrage opportunity. They are executing a Referral Farming operation. The attacker wants the forum members to sign up under their affiliate link so they can passively siphon a percentage of the victims&amp;rsquo; generated revenue.</description>
-    </item>
-    <item>
-      <title>Day 6: Account Recovery Fraud, Compliance Engine Exploits, and the 180-Day IAM Hijack</title>
-      <link>http://localhost:1313/sentry/posts/day6-intel/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day6-intel/</guid>
-      <description>The Threat Landscape: The Secondary Economy of Friction Centralized financial platforms employ aggressive, automated risk-management algorithms. When an algorithm flags a transaction, it locks the account, freezing the user&amp;rsquo;s capital.&#xA;Today&amp;rsquo;s threat intelligence from gray-market forums highlights a predatory economy built around this friction: Account Recovery Fraud. Operators offer to liberate locked funds for a cut of the balance (e.g., a 40/60 split). While many are executing simple credential-harvesting operations, a subset of these actors possess actual operational &amp;ldquo;backdoors&amp;rdquo; to bypass institutional compliance engines.</description>
-    </item>
-    <item>
-      <title>Day 4: The Predator/Prey Matrix, Malicious Tooling, and the &#39;Fake Fullz&#39; Economy</title>
-      <link>http://localhost:1313/sentry/posts/day4-intel/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day4-intel/</guid>
-      <description>The Threat Landscape: The Predator/Prey Matrix Today’s intelligence originates from a veteran operator inside a gray-market forum, issuing a warning to the community&amp;rsquo;s novices. The core revelation is a structural truth about illicit networks: 95% of the participants are not actual operators; they are the liquidity.&#xA;The post exposes the reality of &amp;ldquo;Carding&amp;rdquo; and US financial aid fraud (&amp;ldquo;HELB ya Yues&amp;rdquo;). Because institutional defenses like Two-Factor Authentication (2FA) and biometric verification have drastically raised the technical barrier to entry, the actual &amp;ldquo;Sharp Boys&amp;rdquo; do not sell their zero-day methods or highly guarded &amp;ldquo;Fullz&amp;rdquo; (PII data packages).</description>
-    </item>
-    <item>
-      <title>Day 3: Authority Hijacks, The Advance-Fee Funnel, and False Reassurance</title>
-      <link>http://localhost:1313/sentry/posts/day3-intel/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day3-intel/</guid>
-      <description>The Threat Landscape: Layer 0 Compromise Today’s threat intelligence comes from a community forum where a &amp;ldquo;Verified Moderator&amp;rdquo; announced a massive giveaway (a Mercedes GLE Benz) with zero barrier to entry.&#xA;In the traditional Web2 space, this is a precursor to an Advance-Fee fraud or a PII (Personally Identifiable Information) harvesting operation. In the DeFi ecosystem, this exact vector mirrors a Discord Admin Compromise or a Deployer Key Hijack. Attackers take over an authoritative account (via SIM swapping, session token theft, or phishing) to broadcast a malicious payload to a trusting community.</description>
-    </item>
-    <item>
-      <title>Day 2: Identity Arbitrage, &#39;Hidden Gem&#39; Scams, and the Psychology of FOMO</title>
-      <link>http://localhost:1313/sentry/posts/day2-intel/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day2-intel/</guid>
-      <description>The Threat Landscape: Identity Arbitrage Today&amp;rsquo;s threat intelligence originates from gray-market forums where users are coordinating the mass creation and exploitation of US-based AI training accounts (e.g., Oneforma, Outlier, Atlas Capture).&#xA;The underlying mechanism here is Identity Arbitrage. Because centralized Web2 platforms enforce strict geographical pay disparities and tax jurisdictions, opportunists utilize VPNs, residential proxies, and forged KYC (Know Your Customer) documents to spoof their geographic location and capture higher yields.</description>
-    </item>
-    <item>
-      <title>Day 1: The &#39;Long Game&#39; Airdrop Phishing Funnel &amp; Cross-Chain Data Harvesting</title>
-      <link>http://localhost:1313/sentry/posts/day1/</link>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day1/</guid>
-      <description>The Threat Landscape: Layer 8 Exploits In Web3 security, we often obsess over smart contract vulnerabilities—reentrancy, flash loan attacks, and oracle manipulation. However, the most devastating exploits frequently bypass the protocol layer entirely to attack Layer 8: the human user.&#xA;Today’s threat intelligence highlights a sophisticated reconnaissance and data harvesting operation currently targeting the DeFi ecosystem under the guise of an &amp;ldquo;Easter USDT Airdrop.&amp;rdquo;&#xA;The Technical Vector: The Web2-to-Web3 Bridge The operation relies on a customized Telegram bot and the normalization of airdrops to execute a multi-phase data harvesting attack.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Threat Intel on Project Sentry | Threat Intel</title>
+		<link>http://localhost:1313/PreshieDoesDeFi/tags/threat-intel/</link>
+		<description>Recent content in Threat Intel on Project Sentry | Threat Intel</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 08 Jun 2026 23:30:00 +0300</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/PreshieDoesDeFi/tags/threat-intel/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Lessons from the Albert Gonzalez Breaches: How Blue Teams Detect Advanced SQL Injection</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/albert-gonzalez-blue-team/</link>
+				<pubDate>Mon, 08 Jun 2026 23:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/albert-gonzalez-blue-team/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Disclaimer:&lt;/strong&gt; This article is intended solely for authorised security education, defensive research, and blue-team training. It deliberately avoids weaponised code, real exploit payloads, and operational attack instructions. The concepts discussed should only be explored inside isolated lab environments and with explicit permission.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;When security professionals discuss legendary breach case studies, the name Albert Gonzalez almost always appears.&lt;/p&gt;&#xA;&lt;p&gt;Gonzalez and his criminal network were responsible for some of the largest payment card thefts in history, compromising organizations including TJX, Heartland Payment Systems, Hannaford Brothers, and others. Millions of card records were stolen, leading to enormous financial losses and forcing defenders to rethink how web applications and databases should be protected.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 11: Operation FlamingChina &amp; Interactive DFIR Autopsy</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day11-intel/</link>
+				<pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day11-intel/</guid>
+				<description>&lt;h1 id=&#34;-interactive-dossier-operation-flamingchina&#34;&gt;🕵️ INTERACTIVE DOSSIER: Operation FlamingChina&lt;/h1&gt;&#xA;&lt;p&gt;Standard clinical threat logs are insufficient for deconstructing multi-stage, petabyte-scale breaches. To fully understand the operational mechanics behind the Tianjin National Supercomputer Center compromise, I have engineered an interactive Post-Mortem environment.&lt;/p&gt;&#xA;&lt;p&gt;This briefing deconstructs:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Kill Chain:&lt;/strong&gt; From credential stuffing the perimeter to exploiting legacy SMBv1 debt.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Siphon:&lt;/strong&gt; Visualizing how the adversary masked a 10PB exfiltration operation within the ambient noise of daily HPC throughput.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;The Remediation:&lt;/strong&gt; A structural DevSecOps breakdown of why Castle-and-Moat architectures fail, and how Zero Trust Architecture (ZTA) micro-segmentation contains the blast radius.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;-initialize-interactive-briefing&#34;&gt;⚠️ &lt;a href=&#34;http://localhost:1313/PreshieDoesDeFi/briefings/flamingchina.html&#34;&gt;INITIALIZE INTERACTIVE BRIEFING&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;em&gt;(Note: This dossier utilizes standalone visualization architecture and will execute in a secure, full-screen environment.)&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 7: Referral Farming, OAuth Harvesting, and the GPT Ponzi Mechanic</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day7-intel/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day7-intel/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-the-downline-hustle&#34;&gt;The Threat Landscape: The Downline Hustle&lt;/h1&gt;&#xA;&lt;p&gt;Today’s intelligence drops us into the lower tiers of the gray market: the &amp;ldquo;Get-Paid-To&amp;rdquo; (GPT) ecosystem. An operator in a cybercrime forum attempts to pivot the community away from &amp;ldquo;quick easy money&amp;rdquo; toward a &amp;ldquo;slow but sure&amp;rdquo; daily grind.&lt;/p&gt;&#xA;&lt;p&gt;However, the operator is not sharing a genuine vulnerability or arbitrage opportunity. They are executing a &lt;strong&gt;Referral Farming&lt;/strong&gt; operation. The attacker wants the forum members to sign up under their affiliate link so they can passively siphon a percentage of the victims&amp;rsquo; generated revenue. The community immediately recognizes the bait, with one user accurately noting: &lt;em&gt;&amp;ldquo;Unadhani hatujui kusoma link mzee&amp;rdquo;&lt;/em&gt; (Do you think we don&amp;rsquo;t know how to read a link, old man).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 6: Account Recovery Fraud, Compliance Engine Exploits, and the 180-Day IAM Hijack</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day6-intel/</link>
+				<pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day6-intel/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-the-secondary-economy-of-friction&#34;&gt;The Threat Landscape: The Secondary Economy of Friction&lt;/h1&gt;&#xA;&lt;p&gt;Centralized financial platforms employ aggressive, automated risk-management algorithms. When an algorithm flags a transaction, it locks the account, freezing the user&amp;rsquo;s capital.&lt;/p&gt;&#xA;&lt;p&gt;Today&amp;rsquo;s threat intelligence from gray-market forums highlights a predatory economy built around this friction: &lt;strong&gt;Account Recovery Fraud&lt;/strong&gt;. Operators offer to liberate locked funds for a cut of the balance (e.g., a 40/60 split). While many are executing simple credential-harvesting operations, a subset of these actors possess actual operational &amp;ldquo;backdoors&amp;rdquo; to bypass institutional compliance engines.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 4: The Predator/Prey Matrix, Malicious Tooling, and the &#39;Fake Fullz&#39; Economy</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day4-intel/</link>
+				<pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day4-intel/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-the-predatorprey-matrix&#34;&gt;The Threat Landscape: The Predator/Prey Matrix&lt;/h1&gt;&#xA;&lt;p&gt;Today’s intelligence originates from a veteran operator inside a gray-market forum, issuing a warning to the community&amp;rsquo;s novices. The core revelation is a structural truth about illicit networks: &lt;strong&gt;95% of the participants are not actual operators; they are the liquidity.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The post exposes the reality of &amp;ldquo;Carding&amp;rdquo; and US financial aid fraud (&amp;ldquo;HELB ya Yues&amp;rdquo;). Because institutional defenses like Two-Factor Authentication (2FA) and biometric verification have drastically raised the technical barrier to entry, the actual &amp;ldquo;Sharp Boys&amp;rdquo; do not sell their zero-day methods or highly guarded &amp;ldquo;Fullz&amp;rdquo; (PII data packages).&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 3: Authority Hijacks, The Advance-Fee Funnel, and False Reassurance</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day3-intel/</link>
+				<pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day3-intel/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-layer-0-compromise&#34;&gt;The Threat Landscape: Layer 0 Compromise&lt;/h1&gt;&#xA;&lt;p&gt;Today’s threat intelligence comes from a community forum where a &amp;ldquo;Verified Moderator&amp;rdquo; announced a massive giveaway (a Mercedes GLE Benz) with zero barrier to entry.&lt;/p&gt;&#xA;&lt;p&gt;In the traditional Web2 space, this is a precursor to an Advance-Fee fraud or a PII (Personally Identifiable Information) harvesting operation. In the DeFi ecosystem, this exact vector mirrors a &lt;strong&gt;Discord Admin Compromise&lt;/strong&gt; or a &lt;strong&gt;Deployer Key Hijack&lt;/strong&gt;. Attackers take over an authoritative account (via SIM swapping, session token theft, or phishing) to broadcast a malicious payload to a trusting community.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 2: Identity Arbitrage, &#39;Hidden Gem&#39; Scams, and the Psychology of FOMO</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day2-intel/</link>
+				<pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day2-intel/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-identity-arbitrage&#34;&gt;The Threat Landscape: Identity Arbitrage&lt;/h1&gt;&#xA;&lt;p&gt;Today&amp;rsquo;s threat intelligence originates from gray-market forums where users are coordinating the mass creation and exploitation of US-based AI training accounts (e.g., Oneforma, Outlier, Atlas Capture).&lt;/p&gt;&#xA;&lt;p&gt;The underlying mechanism here is &lt;strong&gt;Identity Arbitrage&lt;/strong&gt;. Because centralized Web2 platforms enforce strict geographical pay disparities and tax jurisdictions, opportunists utilize VPNs, residential proxies, and forged KYC (Know Your Customer) documents to spoof their geographic location and capture higher yields.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Day 1: The &#39;Long Game&#39; Airdrop Phishing Funnel &amp; Cross-Chain Data Harvesting</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day1/</link>
+				<pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day1/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-layer-8-exploits&#34;&gt;The Threat Landscape: Layer 8 Exploits&lt;/h1&gt;&#xA;&lt;p&gt;In Web3 security, we often obsess over smart contract vulnerabilities—reentrancy, flash loan attacks, and oracle manipulation. However, the most devastating exploits frequently bypass the protocol layer entirely to attack Layer 8: &lt;strong&gt;the human user.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Today’s threat intelligence highlights a sophisticated reconnaissance and data harvesting operation currently targeting the DeFi ecosystem under the guise of an &amp;ldquo;Easter USDT Airdrop.&amp;rdquo;&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-technical-vector-the-web2-to-web3-bridge&#34;&gt;The Technical Vector: The Web2-to-Web3 Bridge&lt;/h2&gt;&#xA;&lt;p&gt;The operation relies on a customized Telegram bot and the normalization of airdrops to execute a multi-phase data harvesting attack. Here is the operational breakdown:&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

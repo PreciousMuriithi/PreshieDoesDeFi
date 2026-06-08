@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Identity Arbitrage on Project Sentry | Threat Intel</title>
-    <link>http://localhost:1313/sentry/tags/identity-arbitrage/</link>
-    <description>Recent content in Identity Arbitrage on Project Sentry | Threat Intel</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/sentry/tags/identity-arbitrage/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Day 2: Identity Arbitrage, &#39;Hidden Gem&#39; Scams, and the Psychology of FOMO</title>
-      <link>http://localhost:1313/sentry/posts/day2-intel/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/posts/day2-intel/</guid>
-      <description>The Threat Landscape: Identity Arbitrage Today&amp;rsquo;s threat intelligence originates from gray-market forums where users are coordinating the mass creation and exploitation of US-based AI training accounts (e.g., Oneforma, Outlier, Atlas Capture).&#xA;The underlying mechanism here is Identity Arbitrage. Because centralized Web2 platforms enforce strict geographical pay disparities and tax jurisdictions, opportunists utilize VPNs, residential proxies, and forged KYC (Know Your Customer) documents to spoof their geographic location and capture higher yields.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Identity Arbitrage on Project Sentry | Threat Intel</title>
+		<link>http://localhost:1313/PreshieDoesDeFi/tags/identity-arbitrage/</link>
+		<description>Recent content in Identity Arbitrage on Project Sentry | Threat Intel</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/PreshieDoesDeFi/tags/identity-arbitrage/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Day 2: Identity Arbitrage, &#39;Hidden Gem&#39; Scams, and the Psychology of FOMO</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/posts/day2-intel/</link>
+				<pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/posts/day2-intel/</guid>
+				<description>&lt;h1 id=&#34;the-threat-landscape-identity-arbitrage&#34;&gt;The Threat Landscape: Identity Arbitrage&lt;/h1&gt;&#xA;&lt;p&gt;Today&amp;rsquo;s threat intelligence originates from gray-market forums where users are coordinating the mass creation and exploitation of US-based AI training accounts (e.g., Oneforma, Outlier, Atlas Capture).&lt;/p&gt;&#xA;&lt;p&gt;The underlying mechanism here is &lt;strong&gt;Identity Arbitrage&lt;/strong&gt;. Because centralized Web2 platforms enforce strict geographical pay disparities and tax jurisdictions, opportunists utilize VPNs, residential proxies, and forged KYC (Know Your Customer) documents to spoof their geographic location and capture higher yields.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

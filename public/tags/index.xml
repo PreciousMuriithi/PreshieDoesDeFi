@@ -1,180 +1,423 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Project Sentry | Threat Intel</title>
-    <link>http://localhost:1313/sentry/tags/</link>
-    <description>Recent content in Tags on Project Sentry | Threat Intel</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/sentry/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AML/CFT</title>
-      <link>http://localhost:1313/sentry/tags/aml/cft/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/aml/cft/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CyberPsychology</title>
-      <link>http://localhost:1313/sentry/tags/cyberpsychology/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/cyberpsychology/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dark Patterns</title>
-      <link>http://localhost:1313/sentry/tags/dark-patterns/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/dark-patterns/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Lazarus Group</title>
-      <link>http://localhost:1313/sentry/tags/lazarus-group/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/lazarus-group/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OAuth Harvesting</title>
-      <link>http://localhost:1313/sentry/tags/oauth-harvesting/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/oauth-harvesting/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>On-Chain Forensics</title>
-      <link>http://localhost:1313/sentry/tags/on-chain-forensics/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/on-chain-forensics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OTC Routing</title>
-      <link>http://localhost:1313/sentry/tags/otc-routing/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/otc-routing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Referral Farming</title>
-      <link>http://localhost:1313/sentry/tags/referral-farming/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/referral-farming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Threat Intel</title>
-      <link>http://localhost:1313/sentry/tags/threat-intel/</link>
-      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/threat-intel/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IAM Hijack</title>
-      <link>http://localhost:1313/sentry/tags/iam-hijack/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/iam-hijack/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>KYC Spoofing</title>
-      <link>http://localhost:1313/sentry/tags/kyc-spoofing/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/kyc-spoofing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Recovery Scams</title>
-      <link>http://localhost:1313/sentry/tags/recovery-scams/</link>
-      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/recovery-scams/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Blind Signing</title>
-      <link>http://localhost:1313/sentry/tags/blind-signing/</link>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/blind-signing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Daraja API</title>
-      <link>http://localhost:1313/sentry/tags/daraja-api/</link>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/daraja-api/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Phishing</title>
-      <link>http://localhost:1313/sentry/tags/phishing/</link>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/phishing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>UI Deception</title>
-      <link>http://localhost:1313/sentry/tags/ui-deception/</link>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/ui-deception/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MEV Traps</title>
-      <link>http://localhost:1313/sentry/tags/mev-traps/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/mev-traps/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OpSec</title>
-      <link>http://localhost:1313/sentry/tags/opsec/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/opsec/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Supply Chain Attacks</title>
-      <link>http://localhost:1313/sentry/tags/supply-chain-attacks/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/supply-chain-attacks/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Admin Compromise</title>
-      <link>http://localhost:1313/sentry/tags/admin-compromise/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/admin-compromise/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Authority Bias</title>
-      <link>http://localhost:1313/sentry/tags/authority-bias/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/authority-bias/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Social Engineering</title>
-      <link>http://localhost:1313/sentry/tags/social-engineering/</link>
-      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/social-engineering/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Identity Arbitrage</title>
-      <link>http://localhost:1313/sentry/tags/identity-arbitrage/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/identity-arbitrage/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sybil Attacks</title>
-      <link>http://localhost:1313/sentry/tags/sybil-attacks/</link>
-      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/sentry/tags/sybil-attacks/</guid>
-      <description></description>
-    </item>
-  </channel>
+	<channel>
+		<title>Tags on Project Sentry | Threat Intel</title>
+		<link>http://localhost:1313/PreshieDoesDeFi/tags/</link>
+		<description>Recent content in Tags on Project Sentry | Threat Intel</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 08 Jun 2026 23:30:00 +0300</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/PreshieDoesDeFi/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Blue Team</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/blue-team/</link>
+				<pubDate>Mon, 08 Jun 2026 23:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/blue-team/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Detection Engineering</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/detection-engineering/</link>
+				<pubDate>Mon, 08 Jun 2026 23:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/detection-engineering/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Project Sentry</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/project-sentry/</link>
+				<pubDate>Mon, 08 Jun 2026 23:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/project-sentry/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>SQLi</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/sqli/</link>
+				<pubDate>Mon, 08 Jun 2026 23:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/sqli/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Threat Intel</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/threat-intel/</link>
+				<pubDate>Mon, 08 Jun 2026 23:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/threat-intel/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Exit Liquidity</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/exit-liquidity/</link>
+				<pubDate>Fri, 08 May 2026 16:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/exit-liquidity/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>KPC IPO</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/kpc-ipo/</link>
+				<pubDate>Fri, 08 May 2026 16:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/kpc-ipo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Macroeconomics</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/macroeconomics/</link>
+				<pubDate>Fri, 08 May 2026 16:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/macroeconomics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>NSE</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/nse/</link>
+				<pubDate>Fri, 08 May 2026 16:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/nse/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>DeFi Architecture</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/defi-architecture/</link>
+				<pubDate>Fri, 01 May 2026 13:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/defi-architecture/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Global Markets</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/global-markets/</link>
+				<pubDate>Fri, 01 May 2026 13:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/global-markets/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Synthetics</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/synthetics/</link>
+				<pubDate>Fri, 01 May 2026 13:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/synthetics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ZeroTrust Economics</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/zerotrust-economics/</link>
+				<pubDate>Fri, 01 May 2026 13:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/zerotrust-economics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Crowding Out</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/crowding-out/</link>
+				<pubDate>Sun, 26 Apr 2026 23:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/crowding-out/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Financial Literacy</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/financial-literacy/</link>
+				<pubDate>Sun, 26 Apr 2026 23:00:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/financial-literacy/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Architecture</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/architecture/</link>
+				<pubDate>Sat, 25 Apr 2026 00:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/architecture/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Non-Custodial Escrow</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/non-custodial-escrow/</link>
+				<pubDate>Sat, 25 Apr 2026 00:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/non-custodial-escrow/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>P2P</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/p2p/</link>
+				<pubDate>Sat, 25 Apr 2026 00:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/p2p/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Zk-KYC</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/zk-kyc/</link>
+				<pubDate>Sat, 25 Apr 2026 00:30:00 +0300</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/zk-kyc/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>DeFi</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/defi/</link>
+				<pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/defi/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>DevSecOps</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/devsecops/</link>
+				<pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/devsecops/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Python</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/python/</link>
+				<pubDate>Tue, 21 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/python/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>CyberPsychology</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/cyberpsychology/</link>
+				<pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/cyberpsychology/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Domain Harvesting</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/domain-harvesting/</link>
+				<pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/domain-harvesting/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>OpSec</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/opsec/</link>
+				<pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/opsec/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Social Engineering</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/social-engineering/</link>
+				<pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/social-engineering/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Subdomain Takeover</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/subdomain-takeover/</link>
+				<pubDate>Sat, 18 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/subdomain-takeover/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Bug Bounty</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/bug-bounty/</link>
+				<pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/bug-bounty/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Code Review</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/code-review/</link>
+				<pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/code-review/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Smart Contract Auditing</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/smart-contract-auditing/</link>
+				<pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/smart-contract-auditing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>State Transitions</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/state-transitions/</link>
+				<pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/state-transitions/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Data Exfiltration</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/data-exfiltration/</link>
+				<pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/data-exfiltration/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>DFIR</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/dfir/</link>
+				<pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/dfir/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Interactive</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/interactive/</link>
+				<pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/interactive/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Zero Trust</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/zero-trust/</link>
+				<pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/zero-trust/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Risk Management</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/risk-management/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/risk-management/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Sudden Wealth Syndrome</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/sudden-wealth-syndrome/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/sudden-wealth-syndrome/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tokenomics</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/tokenomics/</link>
+				<pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/tokenomics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>AML/CFT</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/aml/cft/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/aml/cft/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dark Patterns</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/dark-patterns/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/dark-patterns/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Lazarus Group</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/lazarus-group/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/lazarus-group/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>OAuth Harvesting</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/oauth-harvesting/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/oauth-harvesting/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>On-Chain Forensics</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/on-chain-forensics/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/on-chain-forensics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>OTC Routing</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/otc-routing/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/otc-routing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Referral Farming</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/referral-farming/</link>
+				<pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/referral-farming/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>IAM Hijack</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/iam-hijack/</link>
+				<pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/iam-hijack/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>KYC Spoofing</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/kyc-spoofing/</link>
+				<pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/kyc-spoofing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Recovery Scams</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/recovery-scams/</link>
+				<pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/recovery-scams/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Blind Signing</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/blind-signing/</link>
+				<pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/blind-signing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Daraja API</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/daraja-api/</link>
+				<pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/daraja-api/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Phishing</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/phishing/</link>
+				<pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/phishing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>UI Deception</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/ui-deception/</link>
+				<pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/ui-deception/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>MEV Traps</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/mev-traps/</link>
+				<pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/mev-traps/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Supply Chain Attacks</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/supply-chain-attacks/</link>
+				<pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/supply-chain-attacks/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Admin Compromise</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/admin-compromise/</link>
+				<pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/admin-compromise/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Authority Bias</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/authority-bias/</link>
+				<pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/authority-bias/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Identity Arbitrage</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/identity-arbitrage/</link>
+				<pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/identity-arbitrage/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Sybil Attacks</title>
+				<link>http://localhost:1313/PreshieDoesDeFi/tags/sybil-attacks/</link>
+				<pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/PreshieDoesDeFi/tags/sybil-attacks/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>
