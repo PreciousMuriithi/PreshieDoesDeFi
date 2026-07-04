@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nairobi Liquidity Dashboard</title>
+
+  <!-- Tailwind (safe CDN version) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js (fixed version) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <style>
+    body {
+      background: #050816;
+    }
+  </style>
+</head>
+
+<body class="text-gray-200">
+
+<div class="max-w-6xl mx-auto p-6">
+
+  <!-- Header -->
+  <h1 class="text-3xl font-bold mb-2">Liquidity Shock Monitor</h1>
+  <p class="text-gray-400 mb-6">
+    DeFi-style analysis of Nairobi fuel shock and transport disruption
+  </p>
+
+  <!-- Metrics -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+
+    <div class="bg-gray-900 p-4 rounded">
+      <p class="text-sm text-gray-400">Fuel Shock Index</p>
+      <p class="text-2xl font-bold">8.7</p>
+    </div>
+
+    <div class="bg-gray-900 p-4 rounded">
+      <p class="text-sm text-gray-400">Transport Friction</p>
+      <p class="text-2xl font-bold">High</p>
+    </div>
+
+    <div class="bg-gray-900 p-4 rounded">
+      <p class="text-sm text-gray-400">System Confidence</p>
+      <p class="text-2xl font-bold">Low</p>
+    </div>
+
+  </div>
+
+  <!-- Chart (IMPORTANT: fixed height container) -->
+  <div class="bg-gray-900 p-4 rounded mb-6">
+    <h2 class="mb-4">Shock Propagation Curve</h2>
+
+    <div style="height:300px;">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+
+  <!-- Analysis -->
+  <div class="grid md:grid-cols-3 gap-4">
+
+    <div class="bg-gray-900 p-4 rounded">
+      <h3 class="font-bold mb-2">Technical Vector</h3>
+      <p class="text-sm text-gray-400">
+        Fuel behaves like a base-layer asset. Price spikes propagate through all economic layers.
+      </p>
+    </div>
+
+    <div class="bg-gray-900 p-4 rounded">
+      <h3 class="font-bold mb-2">Human API</h3>
+      <p class="text-sm text-gray-400">
+        Trust collapses when pricing feels unpredictable. Behavior shifts immediately.
+      </p>
+    </div>
+
+    <div class="bg-gray-900 p-4 rounded">
+      <h3 class="font-bold mb-2">Mitigation</h3>
+      <p class="text-sm text-gray-400">
+        Transparency + predictability are the only real stabilizers.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  // Prevent multiple initializations
+  let chartInstance = null;
+
+  window.onload = function () {
+    const ctx = document.getElementById('chart').getContext('2d');
+
+    if (chartInstance) {
+      chartInstance.destroy();
+    }
+
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Pre-shock', 'Fuel Rise', 'Fare Spike', 'Strike', 'Talks', 'Recovery'],
+        datasets: [{
+          label: 'Shock Intensity',
+          data: [20, 45, 70, 90, 75, 55],
+          borderWidth: 2,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, // critical fix
+        animation: false, // avoids GPU spikes
+        plugins: {
+          legend: {
+            labels: {
+              color: '#ccc'
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#888' }
+          },
+          y: {
+            ticks: { color: '#888' }
+          }
+        }
+      }
+    });
+  };
+</script>
+
+</body>
+</html>
