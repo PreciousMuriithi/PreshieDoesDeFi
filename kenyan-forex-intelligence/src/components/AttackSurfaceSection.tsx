@@ -1,38 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
+import experienceData from '../data/experience.json';
+import { ComparativeThreatPanel } from './widgets/ComparativeThreatPanel';
 
-export interface EnvironmentParameters {
-  leverage: string;
-  protections: string[];
-}
-
-export interface AttackSurfaceSectionProps {
-  regulatedParameters: EnvironmentParameters;
-  offshoreParameters: EnvironmentParameters;
-}
-
-export const AttackSurfaceSection: React.FC<AttackSurfaceSectionProps> = ({ regulatedParameters, offshoreParameters }) => {
-  // State
-  const [sliderPosition, setSliderPosition] = useState<number>(50);
-
-  // Events
-  const handleDragStart = () => {};
-  const handleDragMove = (pos: number) => setSliderPosition(pos);
-  const handleDragEnd = () => {};
+export const AttackSurfaceSection: React.FC = () => {
+  const screen = experienceData.screens[5];
 
   return (
-    <section className="l-section">
-      <div className="l-container" style={{ position: 'relative' }}>
-        {/* Visually hidden but accessible range input */}
-        <input 
-          type="range" 
-          min="0" 
-          max="100" 
-          value={sliderPosition} 
-          onChange={(e) => handleDragMove(Number(e.target.value))}
-          style={{ position: 'absolute', opacity: 0, width: '100%', zIndex: 10 }}
-          aria-label="Compare regulated vs offshore environments"
-        />
-        {/* EnvironmentPanels, SplitDivider, DragHandle */}
+    <section className="l-section" style={{ padding: '4rem 2rem', backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+      <div className="l-container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <h2 style={{ color: 'var(--color-base-cyan)', fontFamily: 'monospace', marginBottom: '2rem' }}>[ PHASE 05: ATTACK SURFACE ]</h2>
+        <div style={{ padding: '2rem', borderLeft: '4px solid var(--color-base-cyan)', backgroundColor: 'var(--bg-surface)' }}>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--color-base-cyan)' }}>{screen.concept}</h3>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>{screen.content_block}</p>
+          {screen.interaction && screen.interaction.widget === 'AttackSurfaceSlider' ? (
+            <ComparativeThreatPanel />
+          ) : screen.interaction ? (
+            <div style={{ marginTop: '1.5rem', padding: '1rem', border: '1px dashed var(--color-base-cyan)', color: 'var(--color-base-cyan)' }}>
+              <strong>INTEL WIDGET:</strong> {screen.interaction.widget} - {screen.interaction.description}
+            </div>
+          ) : null}
+        </div>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@
     {
       "id": "screen_01_the_catalyst",
       "concept": "Systemic unemployment drives the hyper-financialization of Gen Z.",
-      "content_block": "Kenya faces a severe youth unemployment crisis[cite: 2]. Macroeconomic data indicates a 15.2% unemployment rate for educated youth[cite: 2]. Traditional corporate pathways are viewed as broken promises[cite: 2]. In this stagnant physical economy, the Forex narrative promises an egalitarian escape hatch[cite: 2].",
+      "content_block": "Kenya faces a severe youth unemployment crisis. Macroeconomic data indicates a 15.2% unemployment rate for educated youth. Traditional corporate pathways are viewed as broken promises. In this stagnant physical economy, the Forex narrative promises an egalitarian escape hatch.",
       "word_count": 45,
       "interaction": {
         "type": "animation",
@@ -13,66 +13,66 @@
       },
       "supplementary_format": {
         "type": "analyst_note",
-        "text": "Over 96% of working African youth are trapped in the informal sector[cite: 2]."
+        "text": "Over 96% of working African youth are trapped in the informal sector."
       }
     },
     {
       "id": "screen_02_burnable_infrastructure",
       "concept": "Influencers use disposable digital routing directories rather than corporate infrastructure.",
-      "content_block": "The technical footprint of a top-tier influencer is highly decentralized[cite: 2]. They utilize 'burnable infrastructure'—such as free GitHub Pages subdomains—acting purely as routing directories[cite: 2]. If a social media account gets suspended, the core funnel remains intact[cite: 2].",
+      "content_block": "The technical footprint of a top-tier influencer is highly decentralized. They utilize 'burnable infrastructure'—such as free GitHub Pages subdomains—acting purely as routing directories. If a social media account gets suspended, the core funnel remains intact.",
       "word_count": 40,
       "interaction": {
         "type": "evidence",
         "widget": "InfrastructureMap",
-        "description": "User clicks on nodes (TikTok, Meta Pixels, GitHub) to trace the exact digital flow from social media to the final Telegram signal group[cite: 2]."
+        "description": "User clicks on nodes (TikTok, Meta Pixels, GitHub) to trace the exact digital flow from social media to the final Telegram signal group."
       }
     },
     {
       "id": "screen_03_the_conflict",
       "concept": "Influencers monetize user losses and high-frequency trading volume, not their own trading edge.",
-      "content_block": "Broker partnerships operate on two compensation models: Cost Per Acquisition (CPA) and Revenue Share (RevShare)[cite: 2]. CPA pays fixed bounties for raw sign-ups, while RevShare provides ongoing percentages of spreads[cite: 2]. Both models create massive structural conflicts of interest[cite: 2].",
+      "content_block": "Broker partnerships operate on two compensation models: Cost Per Acquisition (CPA) and Revenue Share (RevShare). CPA pays fixed bounties for raw sign-ups, while RevShare provides ongoing percentages of spreads. Both models create massive structural conflicts of interest.",
       "word_count": 41,
       "interaction": {
         "type": "cards",
         "widget": "MoneyFlowToggle",
-        "description": "User taps two distinct cards (CPA vs RevShare). Tapping RevShare reveals a hidden layer showing how influencers profit even when the client's account is depleted by losses[cite: 2]."
+        "description": "User taps two distinct cards (CPA vs RevShare). Tapping RevShare reveals a hidden layer showing how influencers profit even when the client's account is depleted by losses."
       }
     },
     {
       "id": "screen_04_authority_bias",
       "concept": "Conspicuous consumption is weaponized to bypass critical thinking.",
-      "content_block": "Influencers maintain relentless branding centered on extreme luxury symbolism, like Audi TT RS and Mercedes GLE vehicles[cite: 2]. In cyber psychology, this exploits 'authority bias'[cite: 2]. The target audience is psychologically conditioned to bypass critical analysis of actual trading mechanics[cite: 2].",
+      "content_block": "Influencers maintain relentless branding centered on extreme luxury symbolism, like Audi TT RS and Mercedes GLE vehicles. In cyber psychology, this exploits 'authority bias'. The target audience is psychologically conditioned to bypass critical analysis of actual trading mechanics.",
       "word_count": 43,
       "interaction": {
         "type": "question",
         "widget": "PsychologicalFunnel",
-        "description": "Prompt: 'Is this a financial track record or a uniform?' User drags a redaction bar over a photo of a luxury car, revealing the text 'Heuristic Proxy Indicator' underneath[cite: 2]."
+        "description": "Prompt: 'Is this a financial track record or a uniform?' User drags a redaction bar over a photo of a luxury car, revealing the text 'Heuristic Proxy Indicator' underneath."
       },
       "supplementary_format": {
         "type": "pull_quote",
-        "text": "The consumer implicitly trusts that the presence of a luxury vehicle validates the financial advice being sold[cite: 2]."
+        "text": "The consumer implicitly trusts that the presence of a luxury vehicle validates the financial advice being sold."
       }
     },
     {
       "id": "screen_05_digital_folklore",
       "concept": "The public invents slang narratives to rationalize unexplained extreme wealth.",
-      "content_block": "The ecosystem thrives on viral controversies and internet folklore[cite: 2]. The 'SIM2' narrative evolved from a dual-SIM phone feature into a derogatory accusation of transactional relationships with wealthy benefactors[cite: 2]. This acts as a societal leveling mechanism for the public[cite: 2].",
+      "content_block": "The ecosystem thrives on viral controversies and internet folklore. The 'SIM2' narrative evolved from a dual-SIM phone feature into a derogatory accusation of transactional relationships with wealthy benefactors. This acts as a societal leveling mechanism for the public.",
       "word_count": 43,
       "interaction": {
         "type": "analyst_note",
         "widget": "EvidenceDrawer",
-        "description": "User clicks to open an evidence drawer containing a timeline of viral controversies, fabricated conflicts, and 'wash wash' (money laundering) accusations[cite: 2]."
+        "description": "User clicks to open an evidence drawer containing a timeline of viral controversies, fabricated conflicts, and 'wash wash' (money laundering) accusations."
       }
     },
     {
       "id": "screen_06_the_mathematics_of_ruin",
       "concept": "Frictionless mobile payments combined with extreme leverage guarantee rapid capital liquidation.",
-      "content_block": "M-PESA integration with global broker APIs allows instant deposits as low as KES 1,300 (approx. $10)[cite: 2]. When combined with unregulated offshore leverage reaching 1:2000, this high-speed payment architecture enables rapid capital deployment and immediate liquidation via margin calls[cite: 2].",
+      "content_block": "M-PESA integration with global broker APIs allows instant deposits as low as KES 1,300 (approx. $10). When combined with unregulated offshore leverage reaching 1:2000, this high-speed payment architecture enables rapid capital deployment and immediate liquidation via margin calls.",
       "word_count": 41,
       "interaction": {
         "type": "animation",
         "widget": "AttackSurfaceSlider",
-        "description": "User drags a slider left/right. Left side reveals strict CMA 2025/2026 regulations (1:400 leverage cap)[cite: 2]. Right side reveals the offshore unregulated danger zone (1:2000 leverage)[cite: 2]."
+        "description": "User drags a slider left/right. Left side reveals strict CMA 2025/2026 regulations (1:400 leverage cap). Right side reveals the offshore unregulated danger zone (1:2000 leverage)."
       }
     }
   ]
