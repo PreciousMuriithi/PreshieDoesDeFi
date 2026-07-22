@@ -1,0 +1,54 @@
+/*
+ * Interaction Design System: Kenyan Forex Ecosystem Assessment
+ * File: animations.css
+ * Responsibility: CSS-based animations, easing curves, and strict reduced-motion fallbacks.
+ */
+
+:root {
+  --ease-mechanical: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-linear: linear;
+}
+
+/* 2. System Access Flash (Phase Transition) */
+@keyframes systemFlash {
+  0% { background-color: var(--color-base-navy); }
+  50% { background-color: var(--color-base-cyan); }
+  100% { background-color: var(--color-base-navy); }
+}
+
+.animate-system-flash {
+  animation: systemFlash 150ms step-end forwards;
+}
+
+/* 7. Debrief Accordion & Secure Checkbox SVG Drawing */
+@keyframes drawCheckbox {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-checkbox-draw {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawCheckbox 100ms linear forwards;
+}
+
+/* Global Reduced Motion Overrides (Strict adherence to accessibility reqs) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-system-flash {
+    animation: none !important;
+    background-color: transparent !important;
+  }
+  
+  .animate-checkbox-draw {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

@@ -1,0 +1,96 @@
+/*
+ * Layout Architecture: Kenyan Forex Ecosystem Assessment
+ * File: layout.css
+ */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Container System */
+.l-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Sections */
+.l-section {
+  padding: var(--space-16) 0;
+  width: 100%;
+}
+
+.l-section--hero {
+  padding: var(--space-32) 0;
+}
+
+/* Structural Grids */
+.l-grid-asymmetric {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+.l-grid-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+/* Evidence Board (Horizontal Panning) */
+.l-evidence-board {
+  display: flex;
+  overflow: hidden;
+  /* Performance: Route mobile Y-scroll natively, JS handles X-scroll */
+  touch-action: pan-y; 
+}
+
+.l-evidence-track {
+  display: flex;
+  /* Performance: GPU composite layer for scroll jank prevention */
+  will-change: transform; 
+}
+
+/* Threat Matrix */
+.l-matrix-container {
+  width: 100%;
+  overflow-x: auto;
+  /* Performance: Native momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch; 
+}
+
+.l-matrix-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(4, 1fr);
+  grid-template-rows: 60px repeat(4, 1fr);
+  gap: var(--space-1);
+  min-width: 600px;
+}
+
+/* Matrix Tooltips */
+.l-tooltip {
+  /* Performance: Isolate tooltip renders */
+  will-change: transform, opacity;
+}
+
+/* Responsive Reflow */
+@media (max-width: 768px) {
+  .l-grid-asymmetric,
+  .l-grid-stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
