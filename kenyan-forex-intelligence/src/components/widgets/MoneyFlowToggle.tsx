@@ -4,8 +4,8 @@ export const MoneyFlowToggle: React.FC = () => {
   const [activeModel, setActiveModel] = useState<'CPA' | 'RevShare' | null>(null);
 
   return (
-    <div style={{ backgroundColor: 'var(--color-base-navy)', padding: '2rem', borderRadius: '8px', border: '1px solid var(--color-base-darkgrey)' }}>
-      <h4 style={{ color: 'var(--color-base-orange)', marginBottom: '2rem', fontFamily: 'monospace' }}>[ WIDGET: COMPENSATION MODELS ]</h4>
+    <div style={{ backgroundColor: 'var(--color-base-navy)', padding: '2rem', borderRadius: '8px', border: '1px solid var(--color-base-cyan)' }}>
+      <h4 style={{ color: 'var(--color-base-cyan)', marginBottom: '2rem', fontFamily: 'monospace' }}>[ WIDGET: COMPENSATION MODELS ]</h4>
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
         
@@ -23,7 +23,7 @@ export const MoneyFlowToggle: React.FC = () => {
           }}
         >
           <h3 style={{ color: 'var(--color-base-offwhite)', marginBottom: '1rem', textAlign: 'center', fontSize: '1.2rem', fontFamily: 'monospace' }}>CPA</h3>
-          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', fontSize: '0.8rem', fontFamily: 'monospace', textTransform: 'uppercase' }}>Tap to decode logic</p>
+          <p style={{ color: 'var(--color-base-cyan)', textAlign: 'center', fontSize: '0.8rem', fontFamily: 'monospace', textTransform: 'uppercase' }}>Tap to decode logic</p>
         </div>
 
         {/* RevShare Card */}
@@ -40,7 +40,7 @@ export const MoneyFlowToggle: React.FC = () => {
           }}
         >
           <h3 style={{ color: 'var(--color-base-offwhite)', marginBottom: '1rem', textAlign: 'center', fontSize: '1.2rem', fontFamily: 'monospace' }}>REV-SHARE</h3>
-          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', fontSize: '0.8rem', fontFamily: 'monospace', textTransform: 'uppercase' }}>Tap to decode logic</p>
+          <p style={{ color: 'var(--color-base-cyan)', textAlign: 'center', fontSize: '0.8rem', fontFamily: 'monospace', textTransform: 'uppercase' }}>Tap to decode logic</p>
         </div>
 
       </div>
@@ -64,7 +64,7 @@ export const MoneyFlowToggle: React.FC = () => {
         
         {activeModel === 'CPA' && (
           <div>
-            <strong style={{ color: 'var(--color-base-orange)', display: 'block', marginBottom: '1rem', fontSize: '1.1rem', fontFamily: 'monospace' }}>[ CPA ALGORITHM: ONE-TIME BOUNTY ]</strong>
+            <strong style={{ color: 'var(--color-base-cyan)', display: 'block', marginBottom: '1rem', fontSize: '1.1rem', fontFamily: 'monospace' }}>[ CPA ALGORITHM: ONE-TIME BOUNTY ]</strong>
             <p style={{ lineHeight: '1.6', fontFamily: 'monospace' }}>
               The influencer receives a fixed bounty (e.g., $100-$500) the moment a referred user deposits their first KES 1,300. The influencer's incentive ends there. Their goal is massive volume and rapid churn, completely ignoring the user's long-term trading success.
             </p>
